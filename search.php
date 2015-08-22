@@ -828,10 +828,10 @@ echo $htmlhead;
 if ($mainpage)
 {
 	$searchbody = "<table cellspacing=0 border=0 width=100% height=100%>
-<col width='33%'>
-<col width='70%'>
-<tr><caption><a href='/'><font color=#A00000><h1>Papyrus</h1></font></a><br>$libgennews
-<!--<b>" . $LANG_MESS_31 . "</b>--></caption>
+    <col width='33%'>
+    <col width='70%'>
+    <tr><caption><a href='http://textbooks.io'><font color=#A00000><h1>$TITLE_SITE</h1></font></a><br>$libgennews
+    <!--<b>" . $LANG_MESS_31 . "</b>--></caption>
 
 <td></td><td nowrap>{$form}</td></tr>
 </table>";

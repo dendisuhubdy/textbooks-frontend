@@ -5,12 +5,12 @@ $htmlhead = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'htt
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 	<META HTTP-EQUIV='CACHE-CONTROL' CONTENT='NO-CACHE'>
 	<meta name='robots' content='noindex,nofollow'>
-	<meta name='description' content='Library Genesis is a scientific community targeting collection of books on natural science disciplines and engineering.'>
+	<meta name='description' content='Textbook - Subscription Service'>
 	<meta name='rating' content='general'>
 	<meta name='author' content='BG'>
 	<link rel='stylesheet' href='/menu.css' type='text/css' media='screen' />
 	<link href='http://".$_SERVER['HTTP_HOST']."/rss/rss.php' rel='alternate' type='application/rss+xml' title='Library Genesis: News' />
-	<title>Papyrus Books</title>
+	<title>Textbooks.io</title>
 	<!--[if IE 6]>
 	<style>
 		body {behavior: url('/csshover3.htc');}

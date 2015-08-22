@@ -17,11 +17,11 @@
 // -- end moved data
 
 
-$TITLE_SITE = 'Papyrus';
+$TITLE_SITE = 'Textbooks.io';
 
 
-$LANG_GENESIS = 'Papyus';
-$LANG_DESCRIPTION = 'Papyrus is the biggest subscription service of books on the internet.';
+$LANG_GENESIS = 'Textbooks';
+$LANG_DESCRIPTION = 'Textbooks is the biggest subscription service of books on the internet.';
 $LANG_SEARCH_0 = 'Search!';
 $LANG_MESS_GB = 'GB';
 $LANG_MESS_MB = 'Mb';
