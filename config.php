@@ -9,10 +9,10 @@
         $topictable = 'topics';
 
 	$dbuser = 'root';
-	$dbpass = '!#@532*yat';
+	$dbpass = '';
 
 	$dbuser_get = 'root';
-	$dbpass_get = '!#@532*yat';
+	$dbpass_get = '';
 
 
 	// problem resolution URL to mention in error messages
