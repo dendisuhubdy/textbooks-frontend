@@ -176,7 +176,7 @@ array_walk($row, 'htmlchars');
 array_walk($row, 'trim');
 $row['descr'] = htmlspecialchars_decode($row['descr']);
 $row['toc'] = htmlspecialchars_decode($row['toc']);
-$htmltitle = '<title>Library Genesis: ' . $row['Author'] . ' - ' . $row['Title'].'</title>';
+$htmltitle = '<title>Textbooks.io: ' . $row['Author'] . ' - ' . $row['Title'].'</title>';
 
 
 if($row['Visible'] != 'no')
@@ -184,7 +184,7 @@ include_once '../mirrors.php';
 
 
 
-echo str_replace('<title>Library Genesis</title>', $htmltitle, $htmlhead);
+echo str_replace('<title>Textbooks.io</title>', $htmltitle, $htmlhead);
 
 
 //include_once '../menu_' . $lang . '.html';
@@ -437,8 +437,8 @@ echo "
 
 <tr valign='top'>
 <td><font color='gray'>".$LANG_MESS_49.":</font></td><td colspan=1>".$timelastmoifiedold."</td>
-<td><font color='gray'>".$LANG_MESS_54.":</font></td><td><b><a href='/librarian/registration.php?md5=" . $row['MD5']."'>Librarian libgen.org</a></b></td></tr>
-
+<!--<td><font color='gray'>".$LANG_MESS_54.":</font></td><td><b><a href='/librarian/registration.php?md5=" . $row['MD5']."'>Librarian libgen.org</a></b></td></tr>
+-->
 <tr valign='top'><td><font color='gray'>".$LANG_MESS_50.":</font></td><td colspan='3'>".$row['Commentary']."</td></tr>
 <tr valign='top'><td><font color='gray'>".$LANG_MESS_13.":</font></td><td colspan='3'>".$row['topic_descr']."</td></tr>
 
@@ -496,6 +496,7 @@ echo "
 
 <tr valign='top'><td><font color='gray'>".$LANG_MESS_53.":</font></td>
 
+<!--
 <td colspan='3'><table border='0'  rules='cols' width='100%'>
 <tr>
 <td align='center' width='11,1%'><a href='".$mirror_1_link."'>".$mirror_1_title."</a></td>
@@ -508,7 +509,9 @@ echo "
 <td align='center' width='11,1%'><a href='".$mirror_magnet_link."'>".$mirror_magnet_title."</a></td>
 <td align='center' width='11,1%'><a href='".$mirror_torrent_link."'>".$mirror_torrent_title."</a></td>
 
-</tr></table></td></tr>
+</tr>
+-->
+</table></td></tr>
                    <tr valign='top'><td colspan=4 style='padding: 25px'>".$descr."</tr>
                    <tr valign='top'><td colspan=4 style='padding: 25px'>".$toc."</tr>
 		<tr height='5' valign='top'><td bgcolor='brown' colspan=4></td></tr><tr><td colspan=4><a href='http://genofond.org/viewtopic.php?t=6423'>Error Report</a></td></tr></table>";
