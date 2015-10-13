@@ -1,0 +1,25 @@
+
+
+<form class="form">
+
+  <h2>Welcome back!</h2>
+  
+  <input class="form__input" type="text">
+  <label class="form__label"><h4>Name</h4></label>
+
+  <input class="form__input" type="text">
+  <label class="form__label"><h4>Password</h4></label>
+
+  <input type="submit" value="submit" class="btn--default form__submit">
+
+</form>
+
+<script>
+	$('.form__input').blur(function() {
+	  if( $(this).val() ) {
+	    $(this).addClass('form__input-filled');
+	  } else {
+	    $(this).removeClass('form__input-filled');
+	  }
+	});
+</script>

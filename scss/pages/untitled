@@ -1,0 +1,26 @@
+<div class="centered grid__col--16 profile__brief">
+  <div class="grid profile__item">
+    <div class="grid__col--8"><p>First Name</p></div>
+    <div class="grid__col--16"><p><strong>Ilma</strong></p></div>
+  </div> <!-- end .profile__item -->
+
+  <div class="grid profile__item">
+    <div class="grid__col--8"><p>Last Name</p></div>
+    <div class="grid__col--16"><p><strong>Andayana</strong></p></div>
+  </div> <!-- end .profile__item -->
+
+  <div class="grid profile__item">
+    <div class="grid__col--8"><p>Email Address</p></div>
+    <div class="grid__col--16"><p><strong>ilma.andayana@gmail.com</strong></p></div>
+  </div> <!-- end .profile__item -->
+
+  <div class="grid profile__item">
+    <div class="grid__col--8"><p>Password</p></div>
+    <div class="grid__col--16"><p><strong>&#8226; &#8226; &#8226; &#8226; &#8226; &#8226; &#8226; &#8226;</strong></p></div>
+  </div> <!-- end .profile__item -->
+
+  <div class="grid profile__button">
+    <a class="btn--default" href="https://teamtreehouse.com/account/edit">Edit Account</a>
+    <a class="btn--blank" href="https://teamtreehouse.com/account/password">Change Password</a>
+  </div> <!-- end .profile__item -->
+</div> <!-- end .profile__brief -->

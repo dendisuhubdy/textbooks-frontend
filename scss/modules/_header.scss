@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  background: $white;
+  z-index: 1000;
+  padding-top: em(10px);
+  width: 100%;
+  color: palette(grey, dark);
+
+  .grid {
+    border-bottom: 2px solid transparent;
+    transition: all 300ms ease-in;
+  }
+  // transition: all 0.5s ease;
+
+  .site-logo {
+    display: block;
+    float: left;
+    font-size: em(40px);
+    font-family: $font-family--primary;
+    transition: all 0.5s ease;
+  }
+
+  &-menu {
+    text-align: right;
+    padding-top: em(13px);
+
+    @include e(item) {
+      @extend %nav-item-horz;
+      width: em(70px);
+
+      .icn {
+        &:hover {
+          color: $color-primary;
+        }
+        &:active {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+}

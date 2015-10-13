@@ -1,0 +1,135 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Font Stacks
+
+$font-url--primary       : 'https://fonts.googleapis.com/css?family=Merriweather:300,600';
+$font-url--secondary     : 'https://fonts.googleapis.com/css?family=Raleway:300,400';
+$font-url--accent        : 'https://fonts.googleapis.com/css?family=Open+Sans:400,600';
+
+
+$font-family--primary    : 'Merriweather', serif;
+$font-family--secondary  : 'Raleway', sans-serif;
+$font-family--accent     : 'Open Sans', sans-serif;
+
+// Font Weights
+
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--medium     : 400;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
+// Descriptive Base Colors
+
+$midnightblue : #2c3e50;
+
+$clouds : #ecf0f1;
+$silver : #bdc3c7;
+$concrete : #95a5a6;
+$asbestos : #7f8c8d;
+
+$pumpkin : #d35400;
+$carrot  : #e67e22;
+$emerald : #2ecc71;
+$nephritis: #27ae60;
+$orange : #f39c12;
+$peterriver : #3498db;
+
+
+
+
+$white : #fff;
+$black : #0b0b0b;
+$grey  : rgb(131,128,131);
+
+$coffee    : rgb(197,154,123);
+$latte     : rgb(229,197,165);
+$ceramic   : rgb(216,213,200);
+$eggplant  : #50312f;
+$strawberry: rgb(214, 73, 59);
+$lemonlime : rgb(234,238,160);
+$basilgreen: rgb(107,129, 93);
+
+// Color Usage
+
+$color-primary   : $nephritis;
+$color-secondary : $midnightblue;
+$color-accent    : $orange;
+$color-shadow    : rgba($black, .2);
+
+// Color Palette Modifiers
+
+$color-palettes: (
+  grey: (
+    xx-light : lighten($clouds, 12%),
+    x-light  : $clouds,
+    light    : $silver,
+    base     : $concrete,
+    dark     : $asbestos,
+    x-dark   : darken($asbestos, 15%),
+    xx-dark  : darken($asbestos, 27%)
+  ),
+  black: (
+    light    : lighten($black, 10%),
+    base     : $black,
+    dark     : darken($black, 10%)
+  )
+);
+
+// UI Colors
+
+$ui-colors: (
+  default : $nephritis,
+  success : $emerald,
+  warning : $carrot,
+  info    : $peterriver, 
+  blank   : $asbestos
+);
+
+// Text
+
+$base__font-size : 16px;
+$base__line      : 24px;
+$letter-space    : 1px;
+
+// Border radius
+
+$br--default    : 4px;
+$br--round      : 50%;
+
+// Transitions
+
+$trns-duration  : .3s;
+
+// Path to Assets
+
+$path--rel      : "../img";
+
+// Grid
+
+$g-col-width    : 32px;
+$g-gutter-width : 20px;
+$g-col-count    : 24;
+$g-cont-max-w   : 1680px;
+
+// Breakpoints
+
+$brkpoint-sm    : 1px;
+$brkpoint-md    : 768px;
+$brkpoint-lg    : 1100px;
+
+
+// Font Face 
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.woff') format('woff'),
+      url('fonts/icomoon.ttf') format('truetype'),
+      url('fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,108 @@
+// ==========================================================================
+// Banner
+// ==========================================================================
+.banner {
+
+
+  @include m(content) {
+    height: 100%;
+
+    border-bottom: 2px solid palette(grey);
+  }
+
+  &--content__item--image {
+    @extend %vertical-align__parent;
+    height: 100%;
+    text-align: right;
+    padding-right: percentage(1/24);
+
+    img {
+      @extend %vertical-align__child;
+
+      @include mq(medium) {
+        top: 40%;
+      }
+    }
+
+
+  }
+
+  &--content__item--text{
+    @extend %vertical-align__parent;
+    height: 100%;
+
+    @include mq(medium) {
+      padding-left: percentage(1/24);
+    }
+    
+
+    div {
+      @extend %vertical-align__child;
+      @include mq(medium) {
+        top: 55%;
+      }
+      
+      
+    }
+
+  }
+  
+  h1 {
+    font-family: $font-family--accent;
+    line-height: em(20px);
+
+    span {
+      font-weight: 600;
+      font-size: em(28px);
+      font-family: $font-family--primary;
+      line-height: em(18px);
+      color: palette(grey, xx-dark);
+
+      b {
+        font-family: $font-family--accent;
+        font-size: em(17px);
+      }
+    }
+    
+    // line-height: em(5px);
+  }
+
+  h2 {
+    font-size: em(21px);
+    margin-top: -20px;
+  }
+
+  button {
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+// ==========================================================================
+// Description: How it works
+// ==========================================================================
+.description {
+  text-align: center;
+
+  @extend %vertical-align__parent;
+
+  @include mq(medium) {
+    // height: 90%;
+  }
+
+  @include m(content) {
+    @extend %vertical-align__child;
+    @include m(text) {
+      padding-top: em(20px);
+    }
+  }
+
+  button {
+    margin-top: em(15px);
+  }
+}
+
+
+

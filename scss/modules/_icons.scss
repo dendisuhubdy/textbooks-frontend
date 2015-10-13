@@ -1,0 +1,89 @@
+// ==========================================================================
+// Icons
+// ==========================================================================
+
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+// UI
+
+.icn {
+
+  @extend %icn--ui;
+
+  @include m(close) {
+    padding-top: em(30px);
+    padding-bottom: em(40px);
+    text-align: right;
+  }
+
+  @include m(learn-more) {
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    // @include hacks();
+    @include prefixed(animation-name, "#{$nameSpace}-hang-sink, #{$nameSpace}-hang");
+    @include prefixed(animation-duration, ".3s, 1.5s");
+    @include prefixed(animation-delay, "0s, .3s");
+    @include prefixed(animation-timing-function, "ease-out, ease-in-out");
+    @include prefixed(animation-iteration-count, "1, infinite");
+    @include prefixed(animation-fill-mode, "forwards");
+    @include prefixed(animation-direction, "normal, alternate");
+
+    p {
+      font-size: 90%;
+      margin-bottom: 0;
+    }
+    span {
+      font-size: 150%;
+      line-height: 200%;
+    }    
+  }
+
+  @include e(mathematics) {
+    @include img-replace('collection-icon/math.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(biography) {
+    @include img-replace('collection-icon/biography.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(geographic) {
+    @include img-replace('collection-icon/geographic.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(language) {
+    @include img-replace('collection-icon/language.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(physics) {
+    @include img-replace('collection-icon/physics.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(chemistry) {
+    @include img-replace('collection-icon/chemistry.png', 100px, 100px);
+    margin: auto;
+  }
+
+
+}
+
+.site-logo {
+  @include img-replace('logo.svg', 180px, 50px);
+}
+
+
+.form__close {
+  font-size: 200%;
+  color: green;
+}
