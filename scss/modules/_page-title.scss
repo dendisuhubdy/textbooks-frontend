@@ -1,0 +1,14 @@
+.page-title {
+  text-align: right;
+  color: palette(grey, x-dark);
+  // border-top: 2px solid palette(grey, x-dark);
+  border-bottom: 1px solid palette(grey, x-dark);
+  padding-top: em(15px);
+  padding-bottom: em(7px);
+  width: 100%;
+}
+
+.back {
+  margin-top: em(40px);
+  float: right;
+}

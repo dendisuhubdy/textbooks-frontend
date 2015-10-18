@@ -1,0 +1,82 @@
+// Hang
+
+@include keyframes(#{$nameSpace}-hang) {
+  0% {
+    @include prefixed(transform, translateY(8px));
+  }
+  50% {
+    @include prefixed(transform, translateY(4px));
+  }
+  100% {
+    @include prefixed(transform, translateY(8px));
+  }
+}
+
+@include keyframes(#{$nameSpace}-hang-sink) {
+  100% {
+    @include prefixed(transform, translateY(8px));
+  }
+}
+
+@include keyframes(translateSkewRightIn) {
+  0% {
+    @include transform(translateX(100%) skewX(20deg));
+  }
+  100% {
+    @include transform(translateX(0) skewX(0deg));
+  }
+}
+
+@include keyframes(translateSkewLeftIn) {
+  0% {
+    @include transform(translateX(-300%) skewX(-20deg));
+  }
+  100% {
+    @include transform(translateX(0) skewX(0deg));
+  }
+}
+@include keyframes(translateSkewLeftOut) {
+  0% {
+    @include transform(translateX(0) skewX(0deg));
+  }
+  100% { 
+    @include transform(translateX(-300%) skewX(-20deg));
+  }
+}
+
+@include keyframes(expandFromCenterIn) {
+  0% {
+    top: 50%;
+    height: 0%;
+    left: -100%;
+  }
+  1% {
+    top: 50%;
+    left: 0;
+    height: 0%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
+
+@include keyframes(expandFromCenterOut) {
+  0% {
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  99% {
+    top: 50%;
+    left: 0;
+    height: 0%;
+  }
+  100% {
+    top: 50%;
+    left: -100%;
+    height: 0%;
+  }
+}
+

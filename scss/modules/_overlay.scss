@@ -1,0 +1,63 @@
+.overlay {
+  position: fixed;
+  z-index: 300;
+  left: -120%;
+  top: 50%;
+  height: 0%;
+  width: 100%;
+  background: palette(grey, xx-light);
+  opacity: 0.98;
+
+  @include e(close) {
+    font-size: 200%;
+    text-align: right;
+    margin-right: 25%;
+    margin-top: em(51px);
+    margin-bottom: 0;
+    position: relative;
+    z-index: 600;
+  }
+
+  .form {
+    background: palette(grey, x-light);
+    opacity: 1;
+    box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+    @include transform(translateX(-300%));
+
+    
+
+  }
+
+  &-animated {
+    @include prefixed(animation-name, "expandFromCenterIn");
+    @include prefixed(animation-duration, ".5s");
+    @include prefixed(animation-delay, "0s");
+    @include prefixed(animation-timing-function, "ease-in-out");
+    @include prefixed(animation-fill-mode, "forwards");
+    @include prefixed(animation-direction, "normal");
+    .form {
+      @include prefixed(animation-name, "translateSkewLeftIn");
+      @include prefixed(animation-duration, ".5s");
+      @include prefixed(animation-delay, ".4s");
+      @include prefixed(animation-timing-function, "ease-in-out");
+      @include prefixed(animation-fill-mode, "forwards");
+      @include prefixed(animation-direction, "normal");
+    }
+  }
+  &-animation-removed {
+    @include prefixed(animation-name, "expandFromCenterOut");
+    @include prefixed(animation-duration, ".5s");
+    @include prefixed(animation-delay, "0s");
+    @include prefixed(animation-timing-function, "ease-in-out");
+    @include prefixed(animation-fill-mode, "forwards");
+    @include prefixed(animation-direction, "normal");
+    .form {
+      @include prefixed(animation-name, "translateSkewLeftOut");
+      @include prefixed(animation-duration, ".5s");
+      @include prefixed(animation-delay, "0s");
+      @include prefixed(animation-timing-function, "ease-in-out");
+      @include prefixed(animation-fill-mode, "forwards");
+      @include prefixed(animation-direction, "normal");
+    }
+  }
+}

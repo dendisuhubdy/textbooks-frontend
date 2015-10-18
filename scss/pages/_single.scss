@@ -1,0 +1,16 @@
+.single {
+  
+  @include e(item) {
+    h4 {
+      margin-top: em(60px);
+    }
+
+  }
+  @include e(brief) {
+    @extend %accent-block;
+  }
+
+  button {
+    float: right;
+  }
+}

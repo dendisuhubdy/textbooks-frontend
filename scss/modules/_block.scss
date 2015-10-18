@@ -1,0 +1,27 @@
+%accent-block {
+  color: $black;
+  // border-radius: $br--default;
+  padding: em(20px);
+  background: palette(grey, xx-light);
+
+  strong {
+    color: palette(grey, dark);
+  }
+}
+
+.block {
+  @include e(title) {
+    width: 100%;
+    margin-top: em(80px);
+    padding: em(40px) em(10px) em(10px);
+    color: $white;
+
+    border: 1px solid palette(grey, light);
+    background: palette(grey, light);
+  }
+}
+
+.fullblock {
+  width: 100%;
+  background: $basilgreen;
+}

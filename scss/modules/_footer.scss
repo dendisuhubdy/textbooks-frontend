@@ -1,0 +1,79 @@
+// ==========================================================================
+// Brief
+// ==========================================================================
+.brief {
+  padding-top: em(30px);
+  padding-bottom: em(20px);
+  margin-top: em(100px);
+  margin-bottom: em(10px);
+  border-top: 5px solid $color-accent;
+
+  @extend %vertical-align__parent;
+
+  @include m(content) {
+    @extend %vertical-align__child;
+  }
+
+  blockquote {
+    color: $color-secondary;
+
+    & ~ p {
+      color: $color-secondary;
+      text-align: right;
+      padding-bottom: em(20px);
+    }
+  }
+
+  h4 {
+    line-height: 0;
+    margin-top: em(15px);
+  }
+
+  .privacy {
+    text-align: right;
+  }
+
+  .social {
+    @include e(item) {
+      @extend %nav-item-horz;
+      margin-top: 0;
+      
+      margin-left: 0;
+      margin-right: 0;
+
+      a {
+        line-height: 0;
+        padding: em(6px) em(8px);
+        color: palette(grey, dark);
+        font-size: em(22px);
+        transition: all $trns-duration ease;
+      }
+
+      &--t {
+        a:hover, a:active {
+          color: #55acee;
+          font-size: em(24px);
+
+        }
+      }
+      &--f {
+        a:hover, a:active {
+          color: #3b5998;
+          font-size: em(24px);
+        }
+      }
+      &--g {
+        a:hover, a:active {
+          color: #dd4839;
+          font-size: em(24px);
+        }
+      }
+      &--in {
+        a:hover, a:active {
+          color: #0077b5;
+          font-size: em(24px);
+        }
+      }
+    }
+  }
+}

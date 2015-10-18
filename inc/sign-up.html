@@ -1,0 +1,30 @@
+<form class="form">
+
+  <input class="form__input" type="text">
+  <label class="form__label"><h4>Name</h4></label>
+
+  <input class="form__input" type="text">
+  <label class="form__label"><h4>Email</h4></label>
+
+  <input class="form__input" type="text">
+  <label class="form__label"><h4>Password</h4></label>
+
+  <input class="form__input" type="text">
+  <label class="form__label"><h4>Repeat Password</h4></label>
+
+  <p>Creating an account means you’re okay with Textbooks' <a>Terms of Service</a>, <a>Privacy Policy</a> and <a>Cookie use</a>.</p>
+
+  <input type="submit" value="submit" class="btn--default form__submit">
+
+</form>
+
+<script>
+	$('.form__input').blur(function() {
+		console.log('a');
+	  if( $(this).val() ) {
+	    $(this).addClass('form__input-filled');
+	  } else {
+	    $(this).removeClass('form__input-filled');
+	  }
+	});
+</script>
