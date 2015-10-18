@@ -15,7 +15,7 @@
           What are you waiting for?
         </h1>
         <h2>
-          Sign up for $8.99 and get access to 8 textbooks for 6 months.
+          For just $2.99/mo for students (specific majors) or $8.99 for unlimited textbooks.
         </h2>
         <button class="btn--default signUp" id="signUp">Sign Up</button>
       </div>
@@ -28,43 +28,6 @@
 
 <!-- <p class="icn icn--learn-more icn--learn-more--1">Learn More<br><span>&#x002C7;</span></p> -->
 
-<div class="description">
-  <div class="grid description--content"> 
-    <div class="centered grid__col--12">
-
-    </div>
-  </div>
-</div> <!-- end .description -->
-
-
-<div class="description">
-  <div class="grid description--content"> 
-    <div class="grid__col--14 description--content--text">
-      <h1>Education spending reformed</h1>
-      <p>Subscribe to Oyster Unlimited to get access to over 1 million books for $9.95 a month. Want to read something that’s not in subscription? Just buy it in our store.</p>
-      <button class="btn--info signUp"><a href="#">Start Free Trial</a></button>
-    </div>
-    <div class="grid__col--8">
-      <img src="http://placehold.it/350x400">
-    </div>
-  </div>
-</div> <!-- end .description -->
-
-<!-- <p class="icn icn--learn-more"><span>&#x002C7;</span></p> -->
-
-<div class="description">
-  <div class="grid description--content"> 
-    <div class="grid__col--8 description--content--text">
-      <h1>Read Anywhere</h1>
-      <p>Oyster is an app for discovering and reading books on your smartphone, tablet, or web browser. Books appear instantly, you can read them offline, and you never have to return them!</p>
-    </div>
-    <div class="grid__col--14">
-      <img src="http://placehold.it/700x400">
-    </div>
-  </div>
-</div> <!-- end .description -->
-
-<p class="icn icn--learn-more"><span>&#x002C7;</span></p>
 
 <div class="description">
   <div class="grid description--content">
@@ -104,6 +67,21 @@
     
   </div>
 </div> <!-- end .description -->
+
+<div class="description">
+  <div class="grid description--content">
+    <div class="grid__col--18">
+      <div class="grid__col--14">
+        <p class="font-size--large">Save on college cost!</p>
+      </div>
+      <div class="grid__col--10">
+        <img src="img/smiley.svg">
+      </div>
+    </div>
+    
+  </div>
+</div> <!-- end .description -->
+
 
 
 <?php 

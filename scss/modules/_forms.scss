@@ -3,6 +3,82 @@
 // ==========================================================================
 
 
+
+input[type="radio"] + label,input[type="checkbox"] + label {
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  position:absolute;
+  opacity:0;
+  cursor: pointer;
+  width: 100%;
+  height: 25px;
+  z-index: 400;
+
+  &:hover, &:focus, &:hover + label, &:focus + label {
+    border-color: palette(grey, dark);
+  }
+
+  &:checked + label {
+    position:relative;
+  }
+}
+
+input[type="radio"] + label::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+  position: relative;
+  top: .4em;
+  display: inline-block;
+  background-color: transparent;
+  border-radius: 2em;
+  border: 4px solid #ddd;
+}
+
+input[type="checkbox"] + label::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-right: .5em;
+  position: relative;
+  top: .25em;
+  display: inline-block;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: '✔';
+  // content: 'a';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  color: $color-primary;
+}
+
+input[type="radio"]:checked + label::before {
+  border-color: #ddd;
+}
+
+input[type="radio"]:checked + label::after {
+  content: '';
+  width: .75em;
+  height: .75em;
+  position: absolute;
+  top: .12em;
+  left:.35em;
+  display: inline-block;
+  background-color: #ddd;
+  border-radius: 2em;
+}
+
 .form {
 
   $form-color: $color-primary;
@@ -37,7 +113,6 @@
     }
   }
 
-
   @include e(label) {
     opacity: 0;
     position: relative;
@@ -58,6 +133,10 @@
   p {
     font-size: em(12px);
     margin-top: em(10px);
+  }
 }
 
+.form--additional-note a {
+  color: palette(grey,dark);
+  margin-top: em(40px);
 }

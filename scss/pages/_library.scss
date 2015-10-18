@@ -28,6 +28,12 @@
         }
 
       }
+
+      &:first-child {
+        a {
+          font-weight: $font-weight--ultra-bold;
+        }
+      }
     }
   }
 
@@ -136,6 +142,22 @@
   }
 }
 
+
+.single {
+  .book-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: em(30px);
+  }
+  .book-description {
+    margin-top: em(16px);
+  }
+}
+
+.font-weight--thin {
+  font-weight: 100;
+  color: palette(grey, x-dark);
+}
 
 
 

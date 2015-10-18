@@ -7,7 +7,7 @@
   @include m(content) {
     height: 100%;
 
-    border-bottom: 2px solid palette(grey);
+    border-bottom: 2px solid palette(grey, x-dark);
   }
 
   &--content__item--image {
@@ -101,6 +101,11 @@
 
   button {
     margin-top: em(15px);
+  }
+
+  h1 {
+    margin-top: em(36px);
+    margin-bottom: em(24px);
   }
 }
 

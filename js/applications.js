@@ -1,25 +1,38 @@
 
 
 $(function(){
+
+  // C. Layout
+  // =========
+
+  // Adjust Height of Banner in the Front Page
+  var $bannerHeight =  $(window).height()-$('.header').height()-$('.icn--learn-more--1').height();
+  $('.banner').css('height', $bannerHeight);
+  $('.description').css('height', $bannerHeight);
+
+  $( window ).scroll(function() {
+    if($(window).scrollTop() > $('.banner').height()-5) {
+      $('.header .grid').css('border-bottom-color', 'rgb(90,100,101)');
+    } else {
+      $('.header .grid').css('border-bottom-color', 'transparent');
+    }
+  });
+  
+  
+  var pageurl = '';
+
+
   $("a[rel='tab']").click(function(e){
     //get the link location that was clicked
     pageurl = $(this).attr('href');
-    
-    //to get the ajax content and display in div with id 'container'
-    $.ajax({url:pageurl+'?rel=tab',success: function(data){
-      $('#container').html(data);
-    }});
+    openPage(pageurl);
 
     if ($(this).parent().hasClass('nav__item')) {
       menuAction();
     }
-    
-    //to change the browser URL to 'pageurl'
-    if(pageurl!=window.location){
-      window.history.pushState({path:pageurl},'',pageurl);  
-    }
-    return false;  
+      
   });
+
 });
 
 /* the below code is to override back button to get the ajax content without reload*/
@@ -32,22 +45,30 @@ $(window).bind('popstate', function() {
 
 
 
-// C. Layout
-// =========
 
-// Adjust Height of Banner in the Front Page
-var $bannerHeight =  $(window).height()-$('.header').height()-$('.icn--learn-more--1').height();
-$('.banner').css('height', $bannerHeight);
-$('.description').css('height', $bannerHeight);
+function openPage(pageurl) {
+  //to get the ajax content and display in div with id 'container'
+  $.ajax({url:pageurl+'?rel=tab',success: function(data){
+    $('#container').html(data);
+  }});
 
-$( window ).scroll(function() {
-  if($(window).scrollTop() > $('.banner').height()-5) {
-    $('.header .grid').css('border-bottom-color', '#95a5a6');
-  } else {
-    $('.header .grid').css('border-bottom-color', 'transparent');
+  
+  
+  //to change the browser URL to 'pageurl'
+  if(pageurl!=window.location){
+    window.history.pushState({path:pageurl},'',pageurl);  
   }
-});
+  return false;
+}
 
+
+
+// var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+// console.log(newURL);
+// var pathArray = window.location.pathname.split( '/' );
+// console.log(pathArray);
+// var secondLevelLocation = pathArray[0];
+// console.log(secondLevelLocation);
 
 // Hide left and right arrow at book shelf's slider
 $('.sliderarrow').hide(); 
@@ -116,7 +137,6 @@ function sliderAnimation() {
   });
 
   $controlLeft.click(function () {
-    // console.log($(this).siblings('.books'));
     $curPos = $( this ).siblings('.books').position().left;
     $booksWidth = $(this).next('.books').width();
     if (($curPos + 2*$shelfWindow) < $booksWidth) {
