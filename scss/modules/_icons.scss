@@ -54,12 +54,12 @@
     @include img-replace('collection-icon/math.png', 100px, 100px);
     margin: auto;
   }
-  @include e(biography) {
-    @include img-replace('collection-icon/biography.png', 100px, 100px);
+  @include e(biology) {
+    @include img-replace('collection-icon/biology.png', 100px, 100px);
     margin: auto;
   }
-  @include e(geographic) {
-    @include img-replace('collection-icon/geographic.png', 100px, 100px);
+  @include e(geography) {
+    @include img-replace('collection-icon/geography.png', 100px, 100px);
     margin: auto;
   }
   @include e(language) {
@@ -74,12 +74,26 @@
     @include img-replace('collection-icon/chemistry.png', 100px, 100px);
     margin: auto;
   }
+  @include e(writing) {
+    @include img-replace('collection-icon/writing.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(programming) {
+    @include img-replace('collection-icon/programming.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(history) {
+    @include img-replace('collection-icon/history.png', 100px, 100px);
+    margin: auto;
+  }
 
 
 }
 
 .site-logo {
-  @include img-replace('logo.svg', 180px, 50px);
+  @include img-replace('logo.png', 160px, 40px);
+  margin-top: em(3px);
+
 }
 
 

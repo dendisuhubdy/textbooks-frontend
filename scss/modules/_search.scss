@@ -1,51 +1,58 @@
-.container-3{
-  width: 200px;
-  vertical-align: middle;
-  white-space: nowrap;
-  position: relative;
-}
- 
-.container-3 input#search{
-  width: 200px;
-  height: 10px;
-  background: $white;
+$tl: 0.6s; // transition length
+$search-icon--size: em(40px);
+
+.search-close-toggle {
+  background: transparent;
+  outline: none;
   border: none;
-  font-size: 10pt;
-  float: left;
-  color: $color-primary;
-  padding-left: 45px;
-  -webkit-border-radius: em(40px);
-     -moz-border-radius: em(40px);
-          border-radius: em(40px);
-}
-
-.container-3 input#search::-webkit-input-placeholder {
-   color: #65737e;
-}
- 
-.container-3 input#search:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;  
-}
- 
-.container-3 input#search::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;  
-}
- 
-.container-3 input#search:-ms-input-placeholder {  
-   color: #65737e;  
-}
-
-.container-3 .icon{
+  @include img-replace('collection-icon/cross.png', 15px, 15px);
+  cursor: pointer;
   position: absolute;
-  top: 50%;
-  margin-left: 17px;
-  margin-top: 17px;
-  z-index: 1;
-  color: #4f5b66;
- 
-   -webkit-transition: all .55s ease;
-  -moz-transition: all .55s ease;
-  -ms-transition: all .55s ease;
-  -o-transition: all .55s ease;
-  transition: all .55s ease;
+  right: 0;
+  top: em(15px);
+  display: none;
+
+
 }
+
+.search-box {
+  transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+  width: $search-icon--size;
+  height: $search-icon--size;
+  float: right;
+  cursor: pointer;
+  background: palette(grey, dark);
+  @include img-replace('collection-icon/search.png', 40px, 40px);
+  background-position: left;
+  border-bottom: 1px solid transparent;
+  color: $white;
+
+  &:focus {
+    transition: width $tl cubic-bezier(0,1.22,.66,1.39), border-bottom $tl;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0 em(18px) 0 ($search-icon--size - em(3px));
+    cursor: text;
+    width: 350px;
+    height: $search-icon--size;
+    border-bottom: 1px solid $white;
+
+    & + .search-close-toggle {
+      display: block;
+    }
+
+  }
+  &:not(:focus) {    
+    text-indent:-5000px;    
+  } // for more-graceful falling back (:not browsers likely support indent)
+}
+
+#search-submit {
+  position: relative;left: -5000px;
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+
+

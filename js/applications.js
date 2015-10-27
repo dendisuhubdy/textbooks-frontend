@@ -10,13 +10,13 @@ $(function(){
   $('.banner').css('height', $bannerHeight);
   $('.description').css('height', $bannerHeight);
 
-  $( window ).scroll(function() {
-    if($(window).scrollTop() > $('.banner').height()-5) {
-      $('.header .grid').css('border-bottom-color', 'rgb(90,100,101)');
-    } else {
-      $('.header .grid').css('border-bottom-color', 'transparent');
-    }
-  });
+  // $( window ).scroll(function() {
+  //   if($(window).scrollTop() > $('.banner').height()-5) {
+  //     $('.header .grid').css('border-bottom-color', 'rgb(90,100,101)');
+  //   } else {
+  //     $('.header .grid').css('border-bottom-color', 'transparent');
+  //   }
+  // });
   
   
   var pageurl = '';
@@ -249,3 +249,5 @@ function menuAction() {
   $('.showmenu').toggleClass('showmenu-hide');
   $('.hidemenu').toggleClass('hidemenu-show');
 }
+
+document.addEventListener("touchstart", function(){}, true);
