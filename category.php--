@@ -1,42 +1,21 @@
 <?php include("inc/books.php");
 
-// if (isset($_GET["id"])) {
-//   $book_id = $_GET["id"];
-//   if (isset($books[$book_id])) {
-//     $book = $books[$book_id];
-//   }
+if (isset($_GET["id"])) {
+  $category = $_GET["id"];
+}
+// if (!isset($book)) {
+//   header("Location: library.php");
+//   exit();
 // }
 
-
-
-if (isset($_GET["title"])) {
-  // Find index of object from page Title  
-  foreach($books as $book_id => $book) {
-    if ($book["title"] == $_GET["title"]) {
-      break;
-    }
-  }
-}
-
-
-if (!isset($book)) {
-  header("Location: library.php");
-  exit();
-}
-
-$pageTitle = $book["title"];
-
+$pageTitle = $book["name"];
 if($_GET['rel']!='tab'){
   include('inc/header.php'); 
   echo '<div class="main-container" id="container">';
-}
-
-
-
-?>
+} ?>
 
 <!-- <div class="main-container" id="container"> -->
-  <div class="single">
+  <div class="category">
     <div class="grid single__item">
       <h2 class="page-title">Book Details</h2>
       <div class="single__brief">
@@ -66,8 +45,7 @@ if($_GET['rel']!='tab'){
         </div>
       </div>
     </div>
-    
-    <!-- <div class="grid single__item">
+    <div class="grid single__item">
       <h4>Related Books</h4>
       <ul class="books">
         <li>
@@ -100,12 +78,13 @@ if($_GET['rel']!='tab'){
           </a>
         </li>
       </ul>
-    </div> -->
+    </div>
     <div class="grid single__item">
       <a class="back content-link" href="library.php">Back to Library</a>
     </div>
   </div>
 <!-- </div> -->
+
 
 
 <?php 

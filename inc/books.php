@@ -1,14 +1,54 @@
 <?php
 
+   
+
   function get_list_view_html($book_id, $book) {
+
+    $titleUrl = str_replace(" ", "%20", $book["title"]);
 
     $output = '';
 
     $output = $output . '<li class="books__item">';
-    $output = $output . '<a href="'  . 'book.php?id=' . $book_id . '" id="example">';
+    $output = $output . '<a href="'  . 'book.php?title=' . $titleUrl . '">';
     $output = $output . '<div class="image"><img src="' . $book["img"] .'" alt="' . $book["title"] . '"></div>';
     $output = $output . '</a>';
     $output = $output . '<h6>' . $book["title"] . '</h6>';
+    $output = $output . '</li>';
+
+    return $output;
+  }
+
+  function get_list_view_search($book_id, $book) {
+
+    $titleUrl = str_replace(" ", "%20", $book["title"]);
+
+    $output = '';
+
+    $output = $output . '<li class="search-result--content__item">';
+    $output = $output . '<a href="'  . 'book.php?title=' . $titleUrl . '">';
+    $output = $output . '<div class="image"><img src="' . $book["img"] .'" alt="' . $book["title"] . '"></div>';
+    $output = $output . '</a>';
+    $output = $output . '<h6>' . $book["title"] . '</h6>';
+    $output = $output . '</li>';
+
+    return $output;
+  }
+
+  function get_list_view_html_full($book_id, $book) {
+
+    $titleUrl = str_replace(" ", "%20", $book["title"]);
+
+    $output = '';
+    $output = $output . '<li class="book--full">';
+    $output = $output . '<a href="'  . 'book.php?title=' . $titleUrl . '">';
+    $output = $output . '<div class="book--full__item book--full__item--img"><img src="' . $book["img"] .'" alt="' . $book["title"] . '"></div>';
+    $output = $output . '<div class="book--full__item book--full__item--description">';
+    $output = $output . '<h4>' . $book["title"] . '</h4>';
+    $output = $output . '<h6>Authors &nbsp;&nbsp;&nbsp;: ' . $book["authors"] . '</h6>';
+    $output = $output . '<h6>Publisher : ' . $book["publisher"] . '</h6>';
+    $output = $output . '<h6>ISBN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ' . $book["ISBN-10"] . '</h6>';
+    $output = $output . '</div>';
+    $output = $output . '</a>';
     $output = $output . '</li>';
 
     return $output;
@@ -19,6 +59,7 @@
   $books = array();
 
   $books[10878656787407986] = array(
+    "id" => "10878656787407986",
     "title" => "Campbell Biology (9th Edition)",
     "edition" => "9th Edition",    
     "img" => "img/bookcover/RJ10878656787407986.png",
@@ -33,6 +74,7 @@
   );
 
   $books[10878656787294986] = array(
+    "id" => "10878656787294986",
     "title" => "Chemistry: The Central Science (13th Edition)",
     "edition" => "13th Edition",    
     "img" => "img/bookcover/BT10878656787294986.png",
@@ -49,6 +91,7 @@
   );
 
   $books[10893057387294986] = array(
+    "id" => "10893057387294986",
     "title" => "Calculus: An Intuitive and Physical Approach (Second Edition) (Dover Books on Mathematics)",
     "edition" => "",    
     "img" => "img/bookcover/KM10893057387294986.png",
@@ -63,6 +106,7 @@
   );
 
   $books[10493457587228986] = array(
+    "id" => "10493457587228986",
     "title" => "The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory",
     "edition" => "",    
     "img" => "img/bookcover/GB10493457587228986.png",
@@ -77,6 +121,7 @@
   );
 
   $books[10544402789478986] = array(
+    "id" => "10544402789478986",
     "title" => "Molecular Biology of the Cell, 5th Edition",
     "edition" => "5th Edition",    
     "img" => "img/bookcover/AB10544402789478986.png",
@@ -93,6 +138,7 @@
   );
 
   $books[10493457864228736] = array(
+    "id" => "10493457864228736",
     "title" => "Biology: Concepts and Connections",
     "edition" => "6th Edition",    
     "img" => "img/bookcover/CN10493457864228736.png",
@@ -107,6 +153,7 @@
   );
 
   $books[10863957864228736] = array(
+    "id" => "10863957864228736",
     "title" => "Miller & Levine Biology: 2010 On-Level, Student Edition",
     "edition" => "Student Edition: 2010 Edition",    
     "img" => "img/bookcover/MK10863957864228736.png",
@@ -121,6 +168,7 @@
   );
 
   $books[10863957752048736] = array(
+    "id" => "10863957752048736",
     "title" => "Geometry (McDougal Littell Jurgensen Geometry)",
     "edition" => "",    
     "img" => "img/bookcover/JR10863957752048736.png",
@@ -135,6 +183,7 @@
   );
 
   $books[10523957752048736] = array(
+    "id" => "10523957752048736",
     "title" => "Tutor in a Book's Geometry",
     "edition" => "",    
     "img" => "img/bookcover/GJ10523957752048736.png",

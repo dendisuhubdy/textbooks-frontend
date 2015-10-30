@@ -25,7 +25,7 @@ $search-icon--size: em(40px);
   @include img-replace('collection-icon/search.png', 40px, 40px);
   background-position: left;
   border-bottom: 1px solid transparent;
-  color: $white;
+  color: rgba($white, .8);
 
   &:focus {
     transition: width $tl cubic-bezier(0,1.22,.66,1.39), border-bottom $tl;

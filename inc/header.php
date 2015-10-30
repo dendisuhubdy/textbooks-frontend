@@ -2,9 +2,11 @@
 <html>
   <head>
     <title>textbooks</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/application.css">
-
+    
     
 
   </head>
@@ -18,7 +20,7 @@
         <ul class="header-menu">
           <li class="header-menu__item" id="">
             <form action="">
-              <input id="search-box" type="text" class="search-box" name="q" />
+              <input id="search-box" type="text" class="search-box" name="q" placeholder="Title / Author / ISBN" />
               <button type="reset" class="search-close-toggle"></button>
               <input type="submit" id="search-submit" />
             </form>

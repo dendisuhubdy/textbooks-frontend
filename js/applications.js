@@ -251,3 +251,27 @@ function menuAction() {
 }
 
 document.addEventListener("touchstart", function(){}, true);
+
+
+// Library
+$('.category__opt').hide();
+$('.category__opt--added').show();
+
+function sortFunction() {
+  // var x = ;
+  var i = document.getElementById("sort-option").selectedIndex;
+
+  if (i==0) {
+    $('.category__opt').hide();
+    $('.category__opt--added').show();
+  }
+
+  if (i==1) {
+    $('.category__opt').hide();
+    $('.category__opt--title').show();
+  }
+  if (i==2) {
+    $('.category__opt').hide();
+    $('.category__opt--author').show();
+  }
+}

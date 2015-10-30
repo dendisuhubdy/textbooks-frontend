@@ -88,6 +88,15 @@
   }
 
 
+  @include e(popular) {
+    @include img-replace('collection-icon/popular.png', 100px, 100px);
+    margin: auto;
+  }
+  @include e(home) {
+    @include img-replace('collection-icon/home.png', 100px, 100px);
+    margin: auto;
+  }
+
 }
 
 .site-logo {
