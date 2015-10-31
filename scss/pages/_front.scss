@@ -3,11 +3,16 @@
 // ==========================================================================
 .banner {
 
+  background: url(../img/books.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 
   @include m(content) {
     height: 100%;
 
-    border-bottom: 2px solid palette(grey, x-dark);
+    // border-bottom: 2px solid palette(grey, x-dark);
   }
 
   &--content__item--image {

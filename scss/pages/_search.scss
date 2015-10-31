@@ -1,0 +1,22 @@
+.search-result {
+  margin-top: em(80px);
+
+  @include e(icons) {
+    margin-top: em(40px);
+    text-align: center;
+
+    p {
+      margin-top: em(15px);
+    }
+  }
+
+  @include m(content) {
+    @extend %books;
+
+    @include e(item) {
+      @extend %book;
+    }
+  }
+}
+
+

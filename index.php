@@ -33,33 +33,42 @@
   <div class="grid description--content">
     
     <h1>Choose what you want to read</h1>
-    <div class="grid">
-      <div class="grid__col--8">
+    <div class="centered grid__col--18 grid">
+      <div class="grid__col--6">
         <div class="icn__mathematics"></div>
         <h2>Mathematics</h2>
       </div>
-      <div class="grid__col--8">
-        <div class="icn__biography"></div>
-        <h2>Biography</h2>
+      <div class="grid__col--6">
+        <div class="icn__biology"></div>
+        <h2>Biology</h2>
       </div>
-      <div class="grid__col--8">
-        <div class="icn__geographic"></div>
-        <h2>Geographic</h2>
+      <div class="grid__col--6">
+        <div class="icn__chemistry"></div>
+        <h2>Chemistry</h2>
       </div>
-    </div> <!-- end .grid -->
-
-    <div class="grid">
-      <div class="grid__col--8">
-        <div class="icn__language"></div>
-        <h2>Language</h2>
-      </div>
-      <div class="grid__col--8">
+      <div class="grid__col--6">
         <div class="icn__physics"></div>
         <h2>Physics</h2>
       </div>
-      <div class="grid__col--8">
-        <div class="icn__chemistry"></div>
-        <h2>Chemistry</h2>
+      
+    </div> <!-- end .grid -->
+
+    <div class="centered grid__col--18 grid">
+      <div class="grid__col--6">
+        <div class="icn__programming"></div>
+        <h2>Programming</h2>
+      </div>
+      <div class="grid__col--6">
+        <div class="icn__history"></div>
+        <h2>History</h2>
+      </div>
+      <div class="grid__col--6">
+        <div class="icn__writing"></div>
+        <h2>Writing</h2>
+      </div>
+      <div class="grid__col--6">
+        <div class="icn__geography"></div>
+        <h2>Geography</h2>
       </div>
     </div> <!-- end .grid -->
 

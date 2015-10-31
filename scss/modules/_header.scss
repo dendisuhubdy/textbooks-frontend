@@ -1,11 +1,12 @@
 .header {
   position: fixed;
   top: 0;
-  background: $white;
+  background: palette(grey, dark);
   z-index: 1000;
   padding-top: em(10px);
   width: 100%;
-  color: palette(grey, dark);
+  // color: palette(grey, dark);
+  color: $white;
 
   .grid {
     border-bottom: 2px solid transparent;
@@ -23,18 +24,32 @@
 
   &-menu {
     text-align: right;
-    padding-top: em(13px);
+    // padding-top: em(13px);
 
     @include e(item) {
       @extend %nav-item-horz;
-      width: em(70px);
+      width: em(65px);
+
+      &:not(:first-child) {
+        padding-top: em(13px);
+        margin-top: em(13px);
+      }
+      
+
+      &:first-child {
+        width: em(350px);
+        position: relative;
+        top: -10px;
+      }
 
       .icn {
         &:hover {
-          color: $color-primary;
+          // color: $color-primary;
+          font-weight: $font-weight--bold;
         }
         &:active {
-          color: $color-accent;
+          font-weight: $font-weight--bold;
+          // color: $color-accent;
         }
       }
     }
