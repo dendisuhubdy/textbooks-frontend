@@ -30,49 +30,46 @@
 
 
 <div class="description">
-  <div class="grid description--content">
+  <div class="grid description--content" id="front-browselibrary">
     
     <h1>Choose what you want to read</h1>
-    <div class="centered grid__col--18 grid">
-      <div class="grid__col--6">
-        <div class="icn__mathematics"></div>
-        <h2>Mathematics</h2>
+    <div class="centered grid__col--18 categories-icn">
+      <div>
+        <a href="library.php?category=mathematics"><div class="icn__mathematics"></div>
+        <h2>Mathematics</h2></a>
       </div>
-      <div class="grid__col--6">
-        <div class="icn__biology"></div>
-        <h2>Biology</h2>
+      <div>
+        <a href="library.php?category=biology"    ><div class="icn__biology"></div>
+        <h2>Biology</h2></a>
       </div>
-      <div class="grid__col--6">
-        <div class="icn__chemistry"></div>
-        <h2>Chemistry</h2>
+      <div>
+        <a href="library.php?category=chemistry"  ><div class="icn__chemistry"></div>
+        <h2>Chemistry</h2></a>
       </div>
-      <div class="grid__col--6">
-        <div class="icn__physics"></div>
-        <h2>Physics</h2>
+      <div>
+        <a href="library.php?category=physics"    ><div class="icn__physics"></div>
+        <h2>Physics</h2></a>
+      </div>
+      <div>
+        <a href="library.php?category=programming"><div class="icn__programming"></div>
+        <h2>Programming</h2></a>
+      </div>
+      <div>
+        <a href="library.php?category=history"    ><div class="icn__history"></div>
+        <h2>History</h2></a>
+      </div>
+      <div>
+        <a href="library.php?category=writing"    ><div class="icn__writing"></div>
+        <h2>Writing</h2></a>
+      </div>
+      <div>
+        <a href="library.php?category=geography"  ><div class="icn__geography"></div>
+        <h2>Geography</h2></a>
       </div>
       
     </div> <!-- end .grid -->
 
-    <div class="centered grid__col--18 grid">
-      <div class="grid__col--6">
-        <div class="icn__programming"></div>
-        <h2>Programming</h2>
-      </div>
-      <div class="grid__col--6">
-        <div class="icn__history"></div>
-        <h2>History</h2>
-      </div>
-      <div class="grid__col--6">
-        <div class="icn__writing"></div>
-        <h2>Writing</h2>
-      </div>
-      <div class="grid__col--6">
-        <div class="icn__geography"></div>
-        <h2>Geography</h2>
-      </div>
-    </div> <!-- end .grid -->
-
-    <button class="btn--default">Browse the library</button>
+    <a href="library.php" class="btn--default">Browse the library</a>
     
   </div>
 </div> <!-- end .description -->

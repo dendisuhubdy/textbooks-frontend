@@ -29,8 +29,21 @@
     margin-top: em(15px);
   }
 
+
+  .feet {
+    @include mq(small) {
+      padding-top: em(18px);
+      margin: 0;
+      text-align: center;
+    }
+  }
+
   .privacy {
-    text-align: right;
+    white-space: nowrap;
+
+    @include mq(medium) {
+      text-align: right;
+    }
   }
 
   .social {

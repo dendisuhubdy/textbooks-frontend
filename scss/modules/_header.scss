@@ -24,15 +24,19 @@
 
   &-menu {
     text-align: right;
+
+
     // padding-top: em(13px);
 
     @include e(item) {
       @extend %nav-item-horz;
+      // margin-top: 0;
       width: em(65px);
 
       &:not(:first-child) {
         padding-top: em(13px);
-        margin-top: em(13px);
+        cursor: pointer;
+        // margin-top: em(13px);
       }
       
 
@@ -50,6 +54,26 @@
         &:active {
           font-weight: $font-weight--bold;
           // color: $color-accent;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+
+      @include m(mobile) {
+        cursor: pointer;
+        float: right;
+        font-size: 200%;
+        position: relative;
+        top: em(1px);
+
+        p {
+          margin: 0;
+        }
+        
+        @include mq(medium) {
+          display: none;
         }
       }
     }

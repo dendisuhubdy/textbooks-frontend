@@ -3,15 +3,26 @@
 // ==========================================================================
 
 .nav {
-	margin-bottom: em(30px);
   margin-top: 10%;
   height: 80%;
-  background: $color-primary;
-  // background: palette(grey);
   padding-top: em(20px);
   padding-bottom: em(20px);
   @include transform(translateX(100%) skewX(20deg));
   box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+
+  &:nth-child(1) {
+    background: palette(grey, dark);
+    margin-top: 0;
+
+    @include mq(medium) {
+      display: none;
+    }
+  }
+
+  &:nth-child(2) {
+    background: $color-primary;
+  }
+  
 
   @include mq(medium) {
     padding-top: em(40px);
@@ -42,5 +53,17 @@
     @include prefixed(animation-timing-function, "ease-in-out");
     @include prefixed(animation-fill-mode, "forwards");
     @include prefixed(animation-direction, "normal");
+  }
+}
+
+
+.nav-menu--mobile {
+
+  p {
+    font-size: 200%;
+    color: $white;
+    text-align: center;
+    padding-top: em(10px);
+    font-weight: $font-weight--medium;
   }
 }

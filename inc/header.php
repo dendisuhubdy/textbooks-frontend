@@ -17,10 +17,10 @@
 
         <a href="./" ><div class="site-logo "><b class="srt">textbooks</b></div></a>
 
-        <ul class="header-menu">
+        <ul class="header-menu is-collapsed-mobile">
           <li class="header-menu__item" id="">
             <form action="">
-              <input id="search-box" type="text" class="search-box" name="q" placeholder="Title / Author / ISBN" />
+              <input id="search-box" type="text" class="search-box" name="q" placeholder="Search by Book Title, Author, or ISBN" />
               <button type="reset" class="search-close-toggle"></button>
               <input type="submit" id="search-submit" />
             </form>
@@ -29,9 +29,13 @@
             <p class="icn">Sign In</p>
           </li>
           <li class="header-menu__item" id="menu">
-            <p id="toggle" class="icn"><span class="showmenu">Menu &#9776;</span><span class="hidemenu">Close &#x2715;</span></p>      
+            <p class="toggle" class="icn"><span class="showmenu">Menu &#9776;</span><span class="hidemenu">Close &#x2715;</span></p>      
           </li>       
         </ul>  
+
+        <div class="header-menu__item--mobile">
+          <p class="toggle" class="icn"><span class="showmenu">&#9776;</span><span class="hidemenu">&#x2715;</span></p>  
+        </div>
 
       </div>  <!-- end .grid -->
     </div> <!-- end .header -->
