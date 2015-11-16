@@ -73,7 +73,7 @@ a {
   text-decoration: none;
   color: palette(grey, dark);
   text-shadow: inherit;
-  border-bottom: 4px solid rgba($color-primary, 0.5);
+  border-bottom: 4px solid rgba(lighten($color-primary, 40%), 0.5);
   font-weight: $font-weight--medium;
 
   &:hover,

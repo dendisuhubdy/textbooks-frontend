@@ -272,7 +272,7 @@ a {
   text-decoration: none;
   color: #7f8c8d;
   text-shadow: inherit;
-  border-bottom: 4px solid rgba(39, 174, 96, 0.5);
+  border-bottom: 4px solid rgba(179, 238, 204, 0.5);
   font-weight: 400; }
   a:hover, a:active {
     border-bottom: 2px solid rgba(39, 174, 96, 0.5);
@@ -538,7 +538,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     margin-bottom: 2.25em; }
 
 .btn--default, .form__submit {
-  border: 2px solid #27ae60;
+  border: 2px solid #b3eecc;
   color: #27ae60;
   background: transparent;
   overflow: hidden;
@@ -566,7 +566,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--success {
-  border: 2px solid #2ecc71;
+  border: 2px solid #d1f5e0;
   color: #2ecc71;
   background: transparent;
   overflow: hidden;
@@ -594,7 +594,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--warning {
-  border: 2px solid #e67e22;
+  border: 2px solid #fbe9d9;
   color: #e67e22;
   background: transparent;
   overflow: hidden;
@@ -622,7 +622,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--info {
-  border: 2px solid #3498db;
+  border: 2px solid #e1f0fa;
   color: #3498db;
   background: transparent;
   overflow: hidden;
@@ -650,7 +650,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--blank {
-  border: 2px solid #7f8c8d;
+  border: 2px solid #ebeded;
   color: #7f8c8d;
   background: transparent;
   overflow: hidden;

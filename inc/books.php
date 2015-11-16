@@ -1,7 +1,4 @@
 <?php
-
-   
-
   function get_list_view_html($book_id, $book) {
 
     $titleUrl = str_replace(" ", "%20", $book["title"]);
@@ -401,6 +398,278 @@ Package consists of
     "ISBN-10" => "0321743261",
     "ISBN-13" => "978-0321743268",
     "category" => "biology"
+  );
+
+  $books[13343961838536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13342261838536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13356961838536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13343961838536773] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13343961658536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13663961838536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13343961838536645] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13453961838536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13343961838536123] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13343425838536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13245961838536673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13343961838247673] = array(
+    "title" => "Learn the MFC C++ Classes : Using Microsoft Visual C++ 4, Microsoft Visual C++ 1.5, Symantec C++ 7, and Borland C++ 5",
+    "edition" => "",    
+    "img" => "img/bookcover/WS13343961238536673.png",
+    "authors" => "Shirley Wodtke",
+    "description" => "<p>This book teaches introductory programmers who are already familiar with object-oriented programming and C++ how to use the MFC library.</p>",
+    "pages" => "655",
+    "publisher" => "Wordware Publishing, Inc.; Pap/Dis edition (January 25, 1997)",
+    "language" => "English",
+    "ISBN-10" => "1556225121",
+    "ISBN-13" => "",
+    "category" => "programming"
+  );
+
+  $books[13343627438536673] = array(
+    "title" => "Learning Python, 5th Edition",
+    "edition" => "Fifth Edition",    
+    "img" => "img/bookcover/LM13343735238536673.png",
+    "authors" => " Mark Lutz",
+    "description" => "<p>Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages.</p>
+
+   <p>Complete with quizzes, exercises, and helpful illustrations, this easy-to-follow, self-paced tutorial gets you started with both Python 2.7 and 3.3— the latest releases in the 3.X and 2.X lines—plus all other releases in common use today. You’ll also learn some advanced language features that recently have become more common in Python code.</p>
+
+    <ul>
+      <li>Explore Python’s major built-in object types such as numbers, lists, and dictionaries</li>
+      <li>Create and process objects with Python statements, and learn Python’s general syntax model</li>
+      <li>Use functions to avoid code redundancy and package code for reuse</li>
+      <li>Organize statements, functions, and other tools into larger components with modules</li>
+      <li>Dive into classes: Python’s object-oriented programming tool for structuring code</li>
+      <li>Write large programs with Python’s exception-handling model and development tools</li>
+      <li>Learn advanced Python tools, including decorators, descriptors, metaclasses, and Unicode processing</li>
+    </ul>",
+    "pages" => "1600",
+    "publisher" => "O'Reilly Media; Fifth Edition edition (July 6, 2013)",
+    "language" => "English",
+    "ISBN-10" => "1449355730",
+    "ISBN-13" => "978-1449355739",
+    "category" => "programming"
+  );
+
+  $books[13343735237396673] = array(
+    "title" => "Learning Python, 5th Edition",
+    "edition" => "Fifth Edition",    
+    "img" => "img/bookcover/LM13343735238536673.png",
+    "authors" => " Mark Lutz",
+    "description" => "<p>Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages.</p>
+
+   <p>Complete with quizzes, exercises, and helpful illustrations, this easy-to-follow, self-paced tutorial gets you started with both Python 2.7 and 3.3— the latest releases in the 3.X and 2.X lines—plus all other releases in common use today. You’ll also learn some advanced language features that recently have become more common in Python code.</p>
+
+    <ul>
+      <li>Explore Python’s major built-in object types such as numbers, lists, and dictionaries</li>
+      <li>Create and process objects with Python statements, and learn Python’s general syntax model</li>
+      <li>Use functions to avoid code redundancy and package code for reuse</li>
+      <li>Organize statements, functions, and other tools into larger components with modules</li>
+      <li>Dive into classes: Python’s object-oriented programming tool for structuring code</li>
+      <li>Write large programs with Python’s exception-handling model and development tools</li>
+      <li>Learn advanced Python tools, including decorators, descriptors, metaclasses, and Unicode processing</li>
+    </ul>",
+    "pages" => "1600",
+    "publisher" => "O'Reilly Media; Fifth Edition edition (July 6, 2013)",
+    "language" => "English",
+    "ISBN-10" => "1449355730",
+    "ISBN-13" => "978-1449355739",
+    "category" => "programming"
+  );
+
+  $books[13343675238536673] = array(
+    "title" => "Learning Python, 5th Edition",
+    "edition" => "Fifth Edition",    
+    "img" => "img/bookcover/LM13343735238536673.png",
+    "authors" => " Mark Lutz",
+    "description" => "<p>Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages.</p>
+
+   <p>Complete with quizzes, exercises, and helpful illustrations, this easy-to-follow, self-paced tutorial gets you started with both Python 2.7 and 3.3— the latest releases in the 3.X and 2.X lines—plus all other releases in common use today. You’ll also learn some advanced language features that recently have become more common in Python code.</p>
+
+    <ul>
+      <li>Explore Python’s major built-in object types such as numbers, lists, and dictionaries</li>
+      <li>Create and process objects with Python statements, and learn Python’s general syntax model</li>
+      <li>Use functions to avoid code redundancy and package code for reuse</li>
+      <li>Organize statements, functions, and other tools into larger components with modules</li>
+      <li>Dive into classes: Python’s object-oriented programming tool for structuring code</li>
+      <li>Write large programs with Python’s exception-handling model and development tools</li>
+      <li>Learn advanced Python tools, including decorators, descriptors, metaclasses, and Unicode processing</li>
+    </ul>",
+    "pages" => "1600",
+    "publisher" => "O'Reilly Media; Fifth Edition edition (July 6, 2013)",
+    "language" => "English",
+    "ISBN-10" => "1449355730",
+    "ISBN-13" => "978-1449355739",
+    "category" => "programming"
+  );
+
+  $books[13343735238536530] = array(
+    "title" => "Learning Python, 5th Edition",
+    "edition" => "Fifth Edition",    
+    "img" => "img/bookcover/LM13343735238536673.png",
+    "authors" => " Mark Lutz",
+    "description" => "<p>Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages.</p>
+
+   <p>Complete with quizzes, exercises, and helpful illustrations, this easy-to-follow, self-paced tutorial gets you started with both Python 2.7 and 3.3— the latest releases in the 3.X and 2.X lines—plus all other releases in common use today. You’ll also learn some advanced language features that recently have become more common in Python code.</p>
+
+    <ul>
+      <li>Explore Python’s major built-in object types such as numbers, lists, and dictionaries</li>
+      <li>Create and process objects with Python statements, and learn Python’s general syntax model</li>
+      <li>Use functions to avoid code redundancy and package code for reuse</li>
+      <li>Organize statements, functions, and other tools into larger components with modules</li>
+      <li>Dive into classes: Python’s object-oriented programming tool for structuring code</li>
+      <li>Write large programs with Python’s exception-handling model and development tools</li>
+      <li>Learn advanced Python tools, including decorators, descriptors, metaclasses, and Unicode processing</li>
+    </ul>",
+    "pages" => "1600",
+    "publisher" => "O'Reilly Media; Fifth Edition edition (July 6, 2013)",
+    "language" => "English",
+    "ISBN-10" => "1449355730",
+    "ISBN-13" => "978-1449355739",
+    "category" => "programming"
   );
 
 ?>

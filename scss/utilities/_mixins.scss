@@ -58,7 +58,7 @@
 @mixin border-colors($map) {
   @each $theme, $color in $map {
     &--#{$theme} {
-      border: 2px solid $color;  
+      border: 2px solid lighten($color, 40%);  
       color: $color;
       background: transparent;
       overflow: hidden;

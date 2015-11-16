@@ -4,22 +4,15 @@
   @include e(category) {
     padding-right: em(20px);
 
-    // @include mq(small) {
-    //   margin: 0;
-    // }
-
     @include e(content) {
       @include mq(small) {
         z-index: 300;
         width: 92%;
-        // border: 2px solid $color-primary;
 
         h4 {
           margin-top: 0;
         }
       }
-
-      
     }
 
 
@@ -40,7 +33,6 @@
     }
 
     .side-menu-toggle {
-      
       h4 {
         display: inline;
         padding: em(5px);
