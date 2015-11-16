@@ -13,33 +13,52 @@ $(function(){
 
   // Show Overlay Page (sign in and sign out background)
   // Show Sign In and Sign Out Form
-  $('.signIn').click(function() {
-   $.ajax({
-     url: 'inc/sign-in.html'
-   })
-     .done(function( response ) {
-       $( '.overlay--content div' ).html( response );
-     });
-   $('.overlay').addClass('overlay-animated');
-   $('.overlay').removeClass('overlay-animation-removed');
+  $.ajax({
+    url: 'inc/sign-up.html'
+  })
+  .done(function( response ) {
+    $( '#sign-up-container' ).html( response );
   });
+  $.ajax({
+    url: 'inc/sign-in.html'
+  })
+  .done(function( response ) {
+    $( '#sign-in-container' ).html( response );
+  });
+
+  $('.enter').click(function() {
+    $('.overlay').addClass('overlay-animated');
+    $('.overlay').removeClass('overlay-animation-removed');
+  });
+  
 
   $('.signUp').click(function() {
-   $.ajax({
-     url: 'inc/sign-up.html'
-   })
-     .done(function( response ) {
-       $( '.overlay--content div' ).html( response );
-     });
-   $('.overlay').addClass('overlay-animated');
-   $('.overlay').removeClass('overlay-animation-removed');
+    var index = 0,
+       parent = $('.overlay--content .tab-container');
+
+    showTabContent(parent, index);
   });
+  $('.signIn').click(function() {
+    var index = 1,
+       parent = $('.overlay--content .tab-container');
+
+    showTabContent(parent, index);
+  });
+    
+  $('.tab-menu__item a').click(function (g) { 
+    var tab = $(this).closest('.tab-container'), 
+      index = $(this).parent().index();
+
+    showTabContent(tab, index);
+    
+    g.preventDefault();
+  } );
 
   // Hide overlay page (sign in and sign out background)
-  $('.overlay__close').click(function() {
+ function closeOverlay() {
    $('.overlay').addClass('overlay-animation-removed');
    $('.overlay').removeClass('overlay-animated');
-  });
+  };
 
 
 
@@ -175,6 +194,14 @@ function openPage(pageurl) {
   return false;
 }
 
+// Show content of tabs item, e.g., sign-in and sign up form
+function showTabContent($parent, $index) {
+  $parent.find('.tab-menu__item').removeClass('tab-menu__item--current');
+  $parent.find('.tab-menu__item:eq(' + $index + ')').addClass('tab-menu__item--current');
+  $parent.find('.tab-content__item').hide();
+  $parent.find('.tab-content__item:eq(' + $index + ')').show();
+}
+
 // Slider animation on bookshelfs
 function sliderAnimation() {
   $bookWidth = $('.books li').width();
@@ -227,6 +254,8 @@ function menuAction() {
   $('.showmenu').toggleClass('showmenu-hide');
   $('.hidemenu').toggleClass('hidemenu-show');
 }
+
+
 
 document.addEventListener("touchstart", function(){}, true);
 

@@ -10,12 +10,14 @@
   <label class="form__label" for="user_rememberme">Remember me</br></label>
   
   <input type="submit" value="submit" name="login" class="btn--default form__submit">
-
-  <hr>
-
-  <a href="../login/password_reset.php" class="form--additional-note">I forgot my password </br></a>
+  <input class="btn--blank" type="button" name="cancel" value="cancel" onClick="closeOverlay()" />
+  
 
 </form>
+
+<hr>
+
+<a href="../login/password_reset.php" class="form--additional-note">I forgot my password </br></a>
 
 <script>
 	$('.form__input').blur(function() {
@@ -25,4 +27,9 @@
 	    $(this).removeClass('form__input-filled');
 	  }
 	});
+
+  function closeOverlay() {
+    $('.overlay').addClass('overlay-animation-removed');
+    $('.overlay').removeClass('overlay-animated');
+  };
 </script>
