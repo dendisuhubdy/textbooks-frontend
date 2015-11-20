@@ -9,29 +9,39 @@ if($_GET['rel']!='tab'){
 <div class="library grid">
   <h2 class="page-title">Library</h2>
 
-  <div class="library__category grid__col--5">
-    <h4>Category</h4>
-    <ul class="category">
-      <li class="category__item"><a href="#">My Bookshelf</a></li>
-      <li class="category__item"><a href="library.php?category=biology"    >Biology     </a></li>
-      <li class="category__item"><a href="library.php?category=chemistry"  >Chemistry   </a></li>
-      <li class="category__item"><a href="library.php?category=geography"  >Geography   </a></li>
-      <li class="category__item"><a href="library.php?category=history"    >History     </a></li>
-      <li class="category__item"><a href="library.php?category=mathematics">Mathematics </a></li>
-      <li class="category__item"><a href="library.php?category=physics"    >Physics     </a></li>
-      <li class="category__item"><a href="library.php?category=programming">Programming </a></li>
-      <li class="category__item"><a href="library.php?category=writing"    >Writing     </a></li>
-    </ul>
+  <!-- Side bar Menu: books' categories  -->
+  <div class="grid__col--6 library__category">
+    <div class="library__category__content">
+      <div class="side-menu-toggle is-displayed-mobile"><h4>&#9776; Category</h4></div>
+      <div>
+        <a href="library.php" class="is-hidden-mobile"><h4>Category</h4></a>
+        <ul class="category-menu">
+          <li class="category-menu__item"><a href="#">My Bookshelf</a></li>
+          <li class="category-menu__item"><a href="library.php?category=biology"    >Biology     </a></li>
+          <li class="category-menu__item"><a href="library.php?category=chemistry"  >Chemistry   </a></li>
+          <li class="category-menu__item"><a href="library.php?category=geography"  >Geography   </a></li>
+          <li class="category-menu__item"><a href="library.php?category=history"    >History     </a></li>
+          <li class="category-menu__item"><a href="library.php?category=mathematics">Mathematics </a></li>
+          <li class="category-menu__item"><a href="library.php?category=physics"    >Physics     </a></li>
+          <li class="category-menu__item"><a href="library.php?category=programming">Programming </a></li>
+          <li class="category-menu__item"><a href="library.php?category=writing"    >Writing     </a></li>
+        </ul>
+      </div>
+    </div>
 
     
   </div>
 
-  <div class="library__content grid__col--19">
+  <!-- Lirary content: 
+       (1) Print all books in selected category 
+       (2) Library overview; shows #of books in each category -->
+  <div class="grid__col--18 library__content ">
 
 <?php
 
 if (isset($_GET["category"])) {
   $category = $_GET["category"];
+  // (1) Print all books in selected category 
 ?>
 
     <div class="category__header">
@@ -39,19 +49,19 @@ if (isset($_GET["category"])) {
       <div class="category__header__item category__header__item--option">
         <p>
           Sort by &nbsp;&nbsp;
-
+          <!-- Sorting option -->
           <select id="sort-option" onchange="sortFunction()">
             <option value="added">Newest Added</option> 
             <option value="title">Title</option> 
             <option value="author">Author</option>
-            <option value="popularity">Popularity</option>
+            <!-- <option value="popularity">Popularity</option> -->
           </select>
         </p>
       </div>
       
     </div>
   
-
+    <!-- Print all books in selected category, sort by id -->
     <div class="category__opt category__opt--added">
       <ul class="category__books">
         <?php 
@@ -67,6 +77,7 @@ if (isset($_GET["category"])) {
     </div>
 
 
+    <!-- Sorting function -->
     <?php
       function build_sorter($key) {
           return function ($a, $b) use ($key) {
@@ -75,6 +86,7 @@ if (isset($_GET["category"])) {
       }
     ?>
 
+    <!-- Print all books in selected category, sort by title -->
     <?php 
       usort($books, build_sorter('title'));  
     ?>
@@ -93,6 +105,7 @@ if (isset($_GET["category"])) {
       </ul>
     </div>
 
+    <!-- Print all books in selected category, sort by author's name -->
     <?php 
       usort($books, build_sorter('authors'));  
     ?>
@@ -111,201 +124,154 @@ if (isset($_GET["category"])) {
       </ul>
     </div>
 
-  <!--   <?php 
-      asort($books, build_sorter('popularity'));  
-    ?>
 
-    <ul class="category__books">
-      <?php 
-        $listBooks = '';
-        foreach($books as $book_id => $book) { 
-          if ($book["category"] == $category) {
-            $listBooks = $listBooks . get_list_view_html_full($book_id,$book);
-          }
-        }
-        echo $listBooks;
-      ?>
-    </ul>  -->   
-
-
-
-
-
-
-    
-
-
+  
 
 <?php
 } else { ?>
+  <!-- (2) Library overview; shows #of books in each category -->
+<!--   <div class="grid">
+    <h4>Recommended for you</h4>
+    <div class="library__shelf grid__col--24 grid" id="recommended">
+      <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
+      <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
+      <ul class="books recommended grid__col--24"> -->
+        <?php
+          
+          $bookMathematics = '';
+          $bookBiology     = '';
+          $bookChemistry   = '';
+          $bookPhysics     = '';
+          $bookGeography   = '';
+          $bookHistory     = '';
+          $bookProgramming = '';
+          $bookWriting     = '';
 
-    <div class="grid">
-      <h4>Recommended for you</h4>
-      <div class="library__shelf grid__col--24 grid" id="recommended">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books recommended grid__col--24">
-          <?php
-            
-            $bookMathematics = '';
-            $bookBiology = '';
-            $bookChemistry = '';
-            $bookPhysics = '';
-            $bookGeography = '';
-            $bookHistory = '';
-            $bookProgramming = '';
-            $bookWriting = '';
+          $nRecommended    = 0;
 
-            foreach($books as $book_id => $book) { 
-              echo get_list_view_html($book_id,$book);
-              if ($book["category"] == "mathematics") {
-                $bookMathematics = $bookMathematics . get_list_view_html($book_id,$book);
-              }
-              if ($book["category"] == "biology") {
-                $bookBiology = $bookBiology . get_list_view_html($book_id,$book);
-              }
+          $nBookMathematics = 0;
+          $nBookBiology     = 0;
+          $nBookChemistry   = 0;
+          $nBookPhysics     = 0;
+          $nBookGeography   = 0;
+          $nBookHistory     = 0;
+          $nBookProgramming = 0;
+          $nBookWriting     = 0;
 
-              if ($book["category"] == "chemistry") {
-                $bookChemistry = $bookChemistry . get_list_view_html($book_id,$book);
-              }
+          $nMax = 15;  // Maximum number of books in each shelf
+          $flag = false;
 
-              if ($book["category"] == "physics") {
-                $bookPhysics = $bookPhysics . get_list_view_html($book_id,$book);
-              }
-
-              if ($book["category"] == "geography") {
-                $bookGeography = $bookGeography . get_list_view_html($book_id,$book);
-              }
-
-              if ($book["category"] == "history") {
-                $bookHistory = $bookHistory . get_list_view_html($book_id,$book);
-              }
-
-              if ($book["category"] == "programming") {
-                $bookProgramming = $bookProgramming . get_list_view_html($book_id,$book);
-              }
-
-              if ($book["category"] == "writing") {
-                $bookWriting = $bookWriting . get_list_view_html($book_id,$book);
-              }
+          // Function to list the books
+          function listBooks($n, $nMax, $books, $newBook, $flag) {              
+            if ($n < $nMax) {
+              $books = $books . $newBook;
+              $flag = false;  
+            } else {
+              $flag = true;
             }
-          ?>
-        </ul>
-      </div>
+            return array($books, $flag);
+          }
+
+          foreach($books as $book_id => $book) { 
+            // if ($nRecommended < $nMax) {
+            //   echo get_list_view_html($book_id,$book);
+            //   $nRecommended = $nRecommended + 1;
+            //   $flag = false;
+            // } else {
+            //   $flag = true;
+            // }
+            
+
+            if ($book["category"] == "mathematics") {
+              $res = listBooks($nBookMathematics, $nMax, $bookMathematics, get_list_view_html($book_id,$book), $flag);
+              $bookMathematics = $res[0];
+              $flag = $res[1]; 
+            }
+            if ($book["category"] == "biology") {
+              $res = listBooks($nBookBiology, $nMax, $bookBiology, get_list_view_html($book_id,$book), $flag);
+              $bookBiology = $res[0];
+              $flag = $res[1];
+            }
+
+            if ($book["category"] == "chemistry") {
+              $res = listBooks($nBookChemistry, $nMax, $bookChemistry, get_list_view_html($book_id,$book), $flag);
+              $bookChemistry = $res[0];
+              $flag = $res[1];
+            }
+
+            if ($book["category"] == "physics") {
+              $res = listBooks($nBookPhysics, $nMax, $bookPhysics, get_list_view_html($book_id,$book), $flag);
+              $bookPhysics = $res[0];
+              $flag = $res[1];
+            }
+
+            if ($book["category"] == "geography") {
+              $res = listBooks($nBookGeography, $nMax, $bookGeography, get_list_view_html($book_id,$book), $flag);
+              $bookGeography = $res[0];
+              $flag = $res[1];
+            }
+
+            if ($book["category"] == "history") {
+              $res = listBooks($nBookHistory, $nMax, $bookHistory, get_list_view_html($book_id,$book), $flag);
+              $bookHistory = $res[0];
+              $flag = $res[1];
+            }
+
+            if ($book["category"] == "programming") {
+              $res = listBooks($nBookProgramming, $nMax, $bookProgramming, get_list_view_html($book_id,$book), $flag);
+              $bookProgramming = $res[0];
+              $flag = $res[1];
+            }
+
+            if ($book["category"] == "writing") {
+              $res = listBooks($nBookWriting, $nMax, $bookWriting, get_list_view_html($book_id,$book), $flag);
+              $bookWriting = $res[0];
+              $flag = $res[1];
+            }
+
+            if ($flag == true) {
+              break; // Stop the loop if all shelf have nMax #of books
+            }
+          }
+        ?>
+<!--       </ul>
     </div>
+  </div> -->
 
-    <div class="grid">
-      <h4>Biology 
-        <a href="library.php?category=biology" class="sub-note">See All</a>
-      </h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookBiology;
-          ?>
-        </ul>
-      </div>
-    </div>
+ <?php
+  function printBooks($category, $books){
+    $output = '';
 
-    <div class="grid">
-      <h4>Chemistry <a href="library.php?category=chemistry" class="sub-note">See All</a></h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookChemistry;
-          ?>
-        </ul>
-      </div>
-    </div>
+    if ($books != '') {
+      $output = $output . '<div class="grid">';
+      $output = $output . '  <h4>' . $category;
+      $output = $output . '    <a href="library.php?category=' . $category . '" class="sub-note">See All</a>';
+      $output = $output . '  </h4>';
+      $output = $output . '  <div class="library__shelf grid__col--24 grid">';
+      $output = $output . '    <div class="sliderarrow sliderarrow--left">&lsaquo;</div>'; // Left arrow
+      $output = $output . '    <div class="sliderarrow sliderarrow--right">&rsaquo;</div>';// Right arrow
+      $output = $output . '    <ul class="books grid__col--24">';
+      $output = $output . $books;
+      $output = $output . '    </ul>';
+      $output = $output . '  </div>';
+      $output = $output . '</div>';
+    }
 
-<!--     <div class="grid">
-      <h4>Geography <a href="library.php?category=geography" class="sub-note">See All</a></h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookGeography;
-          ?>
-        </ul>
-      </div>
-    </div> -->
+    return $output;
 
-<!--     <div class="grid">
-      <h4>History <a href="library.php?category=history" class="sub-note">See All</a></h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookHistory;
-          ?>
-        </ul>
-      </div>
-    </div> -->
+    
+  }
 
-    <div class="grid">
-      <h4>Mathematics <a href="library.php?category=mathematics" class="sub-note">See All</a></h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookMathematics;
-          ?>
-        </ul>
-      </div>
-    </div>
+  // Print the books
+  echo printBooks("biology", $bookBiology);
+  echo printBooks("chemistry", $bookChemistry);
+  echo printBooks("geography", $bookGeography);
+  echo printBooks("history", $bookHistory);
+  echo printBooks("mathematics", $bookMathematics);
+  echo printBooks("physics", $bookPhysics);
+  echo printBooks("programming", $bookProgramming);
+  echo printBooks("writing", $bookWriting);
 
-    <div class="grid">
-      <h4>Physics <a href="library.php?category=physics" class="sub-note">See All</a></h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookPhysics;
-          ?>
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid">
-      <h4>Programming <a href="library.php?category=programming" class="sub-note">See All</a></h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookProgramming;
-          ?>
-        </ul>
-      </div>
-    </div>
-
-    <!-- <div class="grid">
-      <h4>Writing <a href="library.php?category=writing" class="sub-note">See All</a></h4>
-      <div class="library__shelf grid__col--24 grid">
-        <div class="sliderarrow sliderarrow--left">&lsaquo;</div>
-        <div class="sliderarrow sliderarrow--right">&rsaquo;</div>
-        <ul class="books grid__col--24">
-          <?php
-              echo $bookWriting;
-          ?>
-        </ul>
-      </div>
-    </div>
- -->
-
-  <!-- </div> -->
-<!-- </div> -->
-
-
-<?php
 }
 ?>
 

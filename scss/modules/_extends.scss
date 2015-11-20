@@ -19,8 +19,8 @@
   color: palette(grey, xx-light);
   border: none;
   @include mq(small) {
-    padding-top: em(14px, 18px);
-    padding-bottom: em(14px, 18px);
+    // padding-top: em(14px, 18px);
+    // padding-bottom: em(14px, 18px);
   }
 }
 

@@ -2,8 +2,26 @@
 
 .library {
   @include e(category) {
-    float: left;
     padding-right: em(20px);
+
+    // @include mq(small) {
+    //   margin: 0;
+    // }
+
+    @include e(content) {
+      @include mq(small) {
+        z-index: 300;
+        width: 92%;
+        // border: 2px solid $color-primary;
+
+        h4 {
+          margin-top: 0;
+        }
+      }
+
+      
+    }
+
 
     h4 {
       margin-bottom: 0;
@@ -12,24 +30,83 @@
       color: $white;
     }
 
-    .category__item {
+    .category-menu {
+      @include mq(small) {
+        @include flexbox();
+        flex-wrap: wrap;
+        width: 100%;
+        background: $white;
+      }
+    }
+
+    .side-menu-toggle {
+      
+      h4 {
+        display: inline;
+        padding: em(5px);
+        border-radius: $br--default;
+        cursor: pointer;
+      }
+
+      & ~ div {
+        @include mq(small) {
+          display: none;
+        }
+        
+      }
+    }
+
+    .side-menu-toggle--active {
+      
+      h4 {
+        display: block;
+        padding: em(20px);
+        border-radius: 0;
+        width: 100%;
+
+      }
+
+      & ~ div {
+        display: block;
+        border: 2px solid $color-primary;
+      }
+    }
+
+
+    .category-menu__item {
       padding: em(8px) em(10px);
 
       &:first-child,
       &:last-child {
         border-bottom: 1px solid palette(grey, light);
+
+        @include mq(small) {
+          border-bottom-color: transparent;
+        }
       }
 
       &:first-child {
         padding: em(20px) em(10px);
+
+        @include mq(small) {
+          padding: em(8px) em(10px); 
+        }
       }
 
       &:nth-child(2) {
         padding-top: em(20px);
+
+        @include mq(small) {
+          padding: em(8px) em(10px); 
+        }
       }
       
       &:last-child {
         padding-bottom: em(20px);
+
+        @include mq(small) {
+          padding: em(8px) em(10px); 
+        }
       }
 
       a {
@@ -50,11 +127,16 @@
           font-weight: $font-weight--ultra-bold;
         }
       }
+
+      @include mq(small) {
+        @include flex(0 150px);
+      }
     }
   }
 
   @include e(content) {
-    float: right;
+    // width: 100%;
+    // float: right;
     h4 {
       margin-bottom: 0;
     }
@@ -70,27 +152,16 @@
 }
 
 .books{
-  // height: em(380px);
-  // width: 200%;
-  margin: 0;
-  // // margin-left: em(15px);
-  // // margin-top: em(30px);
-  position: relative;
-
   @include flexbox();
+  position: relative;
   align-items: baseline;
+  margin: 0;
+
 
   li {
-    // display: block;
-    // width: 170px;
-    // height: 100%;
+    @include flex(0 170px);
     cursor: pointer;
-    // float: left;
-    // margin: 2px;
-    // z-index: 1;
     -webkit-backface-visibility: hidden;
-    // padding-top: em(20px);
-    @include flex(1 180px);
 
     div {
       position: relative;
@@ -121,7 +192,6 @@
           -ms-transform: scale(1.08) translateY(-5px);
               transform: scale(1.08) translateY(-5px);
       z-index: 100; 
-
     }
   }
 }

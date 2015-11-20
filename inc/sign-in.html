@@ -1,15 +1,19 @@
 <form class="form" method="post" action="login/views/signin.php" name="loginform">
-  <label for="user_name">Username</label>
-  <input id="user_name" type="text" name="user_name" required />
-  <label for="user_password">Password</label>
-  <input id="user_password" type="password" name="user_password" autocomplete="off" required />
-  <input type="checkbox" id="user_rememberme" name="user_rememberme" value="1" /> 
-  <label for="user_rememberme">Remember me</label>
-  <label>Keep me logged in (for 2 weeks)</label>
 
-  <p class="form--additional-note"><a href="../login/password_reset.php">I forgot my password</a><p>
-
+  <input class="form__input" id="user_name" type="text" name="user_name" required />
+  <label class="form__label" for="user_name"><h4>Username</h4></label>
+  
+  <input class="form__input" id="user_password" type="password" name="user_password" autocomplete="off" required />
+  <label class="form__label" for="user_password"><h4>Password</h4></label>
+  
+  <input class="form__input" type="checkbox" id="user_rememberme" name="user_rememberme" value="1" /> 
+  <label class="form__label" for="user_rememberme">Remember me</br></label>
+  
   <input type="submit" value="submit" name="login" class="btn--default form__submit">
+
+  <hr>
+
+  <a href="../login/password_reset.php" class="form--additional-note">I forgot my password </br></a>
 
 </form>
 

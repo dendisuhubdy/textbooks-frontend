@@ -2,7 +2,7 @@
 // Form Elements
 // ==========================================================================
 
-
+$form-color: $color-primary;
 
 input[type="radio"] + label,input[type="checkbox"] + label {
   cursor: pointer;
@@ -15,6 +15,8 @@ input[type="checkbox"] {
   cursor: pointer;
   width: 100%;
   height: 25px;
+  width: 25px;
+  margin: 0;
   z-index: 400;
 
   &:hover, &:focus, &:hover + label, &:focus + label {
@@ -27,7 +29,7 @@ input[type="checkbox"] {
 }
 
 input[type="radio"] + label::before {
-  content: '';
+  content: ' ';
   width: 1em;
   height: 1em;
   margin-right: .5em;
@@ -40,15 +42,17 @@ input[type="radio"] + label::before {
 }
 
 input[type="checkbox"] + label::before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  margin-right: .5em;
+  content: ' ';
+  width: 21px;
+  height: 21px;
+  padding: 0 auto;
+  margin-right: em(5px);
   position: relative;
-  top: .25em;
+  top: em(5px);
   display: inline-block;
-  background-color: #ddd;
-  border-radius: 5px;
+  border: 1px solid palette(grey, light);
+  // background-color: palette(grey, x-light);
+  border-radius: $br--round;;
 }
 
 input[type="checkbox"]:checked + label::after {
@@ -56,10 +60,10 @@ input[type="checkbox"]:checked + label::after {
   // content: 'a';
   display: block;
   position: absolute;
-  top: 0;
-  left: 4px;
-  width: 10px;
-  height: 10px;
+  top: -3px;
+  left: 5px;
+  width: 21px;
+  height: 21px;
   color: $color-primary;
 }
 
@@ -80,18 +84,16 @@ input[type="radio"]:checked + label::after {
 }
 
 .form {
-
-  $form-color: $color-primary;
   position: relative;
   padding: em(40px) em(20px) em(20px);
 
   @include e(input) {
-    height: 36px;
+    height: 32px;
     background: none;
     position: relative;
     z-index: 200;
     border-bottom: 2px solid $form-color;
-    margin-top: em(16px);
+    margin-top: em(14px);
 
     label h4 {
       font-size: 90%;
@@ -105,16 +107,21 @@ input[type="radio"]:checked + label::after {
       transition: all 0.3s;
     }
 
-    &:focus + label h4,
-    &-filled +label h4 {
+    &:focus + label h4 {
       transform: translate(5px, -54px);
+      font-size: 80%;
+      color: $form-color;
+    }
+
+    &-filled +label h4 {
+      transform: translate(6px, -45px);
       font-size: 80%;
       color: $form-color;
     }
   }
 
   @include e(label) {
-    opacity: 0;
+    // opacity: 0;
     position: relative;
     z-index: 100;
 
@@ -128,15 +135,27 @@ input[type="radio"]:checked + label::after {
 
   @include e(submit) {
     margin-top: em(35px);
+    @extend .btn--default;
   }
 
   p {
     font-size: em(12px);
     margin-top: em(10px);
+    margin-bottom: 0;
+
+    a {
+      border-bottom-width: 2px;
+
+      &:hover {
+        border-bottom-width: 1px;
+      }
+    }
   }
 }
 
-.form--additional-note a {
+.form--additional-note {
   color: palette(grey,dark);
   margin-top: em(40px);
+  font-size: em(12px);
+  border-bottom: 2px solid $form-color;
 }

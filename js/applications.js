@@ -7,21 +7,14 @@ $(function(){
 
   // Adjust Height of Banner in the Front Page
   var $bannerHeight =  $(window).height()-$('.header').height()-$('.icn--learn-more--1').height();
-  $('.banner').css('height', $bannerHeight);
-  $('.description').css('height', $bannerHeight);
-
-  // $( window ).scroll(function() {
-  //   if($(window).scrollTop() > $('.banner').height()-5) {
-  //     $('.header .grid').css('border-bottom-color', 'rgb(90,100,101)');
-  //   } else {
-  //     $('.header .grid').css('border-bottom-color', 'transparent');
-  //   }
-  // });
+  if ($(window).width() > 768) {
+    $('.banner').css('height', $bannerHeight);
+  }
   
+  $(".banner--content__item--text h1").fitText(1.2, { minFontSize: '30px', maxFontSize: '80px' });
   
+  // Load the pages
   var pageurl = '';
-
-
   $("a[rel='tab']").click(function(e){
     //get the link location that was clicked
     pageurl = $(this).attr('href');
@@ -30,9 +23,7 @@ $(function(){
     if ($(this).parent().hasClass('nav__item')) {
       menuAction();
     }
-      
   });
-
 });
 
 /* the below code is to override back button to get the ajax content without reload*/
@@ -44,16 +35,12 @@ $(window).bind('popstate', function() {
 
 
 
-
-
 function openPage(pageurl) {
   //to get the ajax content and display in div with id 'container'
   $.ajax({url:pageurl+'?rel=tab',success: function(data){
     $('#container').html(data);
   }});
 
-  
-  
   //to change the browser URL to 'pageurl'
   if(pageurl!=window.location){
     window.history.pushState({path:pageurl},'',pageurl);  
@@ -63,20 +50,16 @@ function openPage(pageurl) {
 
 
 
-// var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-// console.log(newURL);
-// var pathArray = window.location.pathname.split( '/' );
-// console.log(pathArray);
-// var secondLevelLocation = pathArray[0];
-// console.log(secondLevelLocation);
-
 // Hide left and right arrow at book shelf's slider
 $('.sliderarrow').hide(); 
 
 $('.library__shelf').each(function() { 
   $books = $( this ).find('.books');  
-  $books.css('width', $books.find('.books__item').length*(170+4));
 
+  // Set length of the shelf
+  $books.css('width', $books.find('.books__item').length*(170));
+
+  // Show the right arrow if shelf width > screen width
   if ($books.width() > $(this).width()) {
     $(this).find('.sliderarrow--right').show();
   };
@@ -89,13 +72,14 @@ sliderAnimation();
 
 $( window ).resize(function() {
   $bannerHeight =  $(window).height()-$('.header').height()-$('.icn--learn-more--1').height();
-  $('.banner').css('height', $bannerHeight);
-  $('.description').css('height', $bannerHeight);
+  if ($(window).width() > 768) {
+    $('.banner').css('height', $bannerHeight);
+  }
 
   // Adjust Width of Library Shelf 
   $('.library__shelf').each(function() { 
+  
     $books = $( this ).find('.books');
-
     if ($books.width() > $(this).width()) {
       $(this).find('.sliderarrow--right').show();
     };
@@ -108,28 +92,33 @@ $( window ).resize(function() {
 
 });
 
+console.log($('.library__content').parent());
+console.log($('.library__content').width());
 
 
 
 
 function sliderAnimation() {
-  $bookWidth = $('.books li').width() + 4;
+  $bookWidth = $('.books li').width();
   $shelfWidth = $('.library__shelf').width();
   $nBookDisplayed = Math.floor($shelfWidth/$bookWidth);
   $shelfWindow = $nBookDisplayed * $bookWidth;
 
-  
+  // console.log($shelfWidth);
+  // console.log($shelfWindow);
+
   $controlRight.click(function () {
     $curPos = $( this ).next('.books').position().left;
+
     $booksWidth = $(this).next('.books').width();
-    if (($curPos + 2*$shelfWindow) < $booksWidth) {
+    if ((-$curPos + 2*$shelfWindow) < $booksWidth) {
       $( this ).next('.books').animate({
         left: "-=" + $shelfWindow
       }, 700);
       $(this).siblings('.sliderarrow--left').show(700);
     } else {
       $( this ).next('.books').animate({
-        left: -($booksWidth - $curPos - $shelfWidth)
+        left: -($booksWidth - $shelfWidth)
       }, 700);
       $(this).hide(700);
       $(this).siblings('.sliderarrow--left').show(700);
@@ -139,7 +128,7 @@ function sliderAnimation() {
   $controlLeft.click(function () {
     $curPos = $( this ).siblings('.books').position().left;
     $booksWidth = $(this).next('.books').width();
-    if (($curPos + 2*$shelfWindow) < $booksWidth) {
+    if (($curPos + $shelfWindow) < $booksWidth) {
       $( this ).siblings('.books').animate({
         left: "+=" + $shelfWindow
       }, 700);
@@ -162,7 +151,7 @@ function sliderAnimation() {
 
  // Toggle Menu
 $(document).ready(function() {
-  $('#toggle').click(function() {
+  $('.toggle').click(function() {
    menuAction();
   });
 
@@ -203,12 +192,6 @@ $(document).ready(function() {
    $('.overlay').addClass('overlay-animation-removed');
    $('.overlay').removeClass('overlay-animated');
   });
-
-
-
-
-
-
 
 });
 
@@ -275,3 +258,10 @@ function sortFunction() {
     $('.category__opt--author').show();
   }
 }
+
+// $('.side-menu-toggle').siblings('div').hide();
+$('.side-menu-toggle').click(function() {
+  $(this).toggleClass('side-menu-toggle--active');
+  
+  console.log('click');
+});

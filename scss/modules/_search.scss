@@ -12,11 +12,19 @@ $search-icon--size: em(40px);
   top: em(15px);
   display: none;
 
+  @include mq(small) {
+    top: em(70px);
+    right: em(5px);
+    font-size: 150%;
+    margin: 0;
+    line-height: 0;
+    display: block;
+  }
 
 }
 
 .search-box {
-  transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+  transition: width $tl, background $tl, box-shadow $tl;
   width: $search-icon--size;
   height: $search-icon--size;
   float: right;
@@ -26,6 +34,12 @@ $search-icon--size: em(40px);
   background-position: left;
   border-bottom: 1px solid transparent;
   color: rgba($white, .8);
+
+  @include mq(small) {
+    width: 100%;
+    cursor: text;
+    border-bottom: 1px solid $white;
+  }
 
   &:focus {
     transition: width $tl cubic-bezier(0,1.22,.66,1.39), border-bottom $tl;
@@ -38,14 +52,23 @@ $search-icon--size: em(40px);
     height: $search-icon--size;
     border-bottom: 1px solid $white;
 
+    @include mq(small) {
+      width: 100%;
+      padding: 0 em(25px) 0 ($search-icon--size - em(3px));
+    }
+
     & + .search-close-toggle {
       display: block;
     }
 
   }
   &:not(:focus) {    
-    text-indent:-5000px;    
-  } // for more-graceful falling back (:not browsers likely support indent)
+    text-indent:-5000px;  
+      @include mq(small) {
+        text-indent: em(22px);
+      }
+
+  } 
 }
 
 #search-submit {
