@@ -19,7 +19,8 @@
   
   <p>Creating an account means you agree with Textbooks.io' <a>Terms of Service</a>, <a>Privacy Policy</a> and <a>Cookie use</a>.</p>
 
-  <input type="submit" value="Sign Up" name="register" class="btn--default form__submit">
+  <input class="btn--default form__submit" type="submit" value="Sign Up" name="register" >
+  <input class="btn--blank" type="button" name="cancel" value="cancel" onClick="closeOverlay()" />
 </form>
 
 <script>
@@ -30,4 +31,8 @@
 	    $(this).removeClass('form__input-filled');
 	  }
 	});
+  function closeOverlay() {
+    $('.overlay').addClass('overlay-animation-removed');
+    $('.overlay').removeClass('overlay-animated');
+  };
 </script>

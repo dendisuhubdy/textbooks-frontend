@@ -2,8 +2,67 @@
 
 $(function(){
 
-  // C. Layout
-  // =========
+  // ========= HEADER ========= //
+  $('.toggle').click(function() {
+   menuAction();
+  });
+
+
+
+  // ========= OVERLAY SIGN IN AND SIGN UP FORM ========= //
+
+  // Show Overlay Page (sign in and sign out background)
+  // Show Sign In and Sign Out Form
+  $.ajax({
+    url: 'inc/sign-up.html'
+  })
+  .done(function( response ) {
+    $( '#sign-up-container' ).html( response );
+  });
+  $.ajax({
+    url: 'inc/sign-in.html'
+  })
+  .done(function( response ) {
+    $( '#sign-in-container' ).html( response );
+  });
+
+  $('.enter').click(function() {
+    $('.overlay').addClass('overlay-animated');
+    $('.overlay').removeClass('overlay-animation-removed');
+  });
+  
+
+  $('.signUp').click(function() {
+    var index = 0,
+       parent = $('.overlay--content .tab-container');
+
+    showTabContent(parent, index);
+  });
+  $('.signIn').click(function() {
+    var index = 1,
+       parent = $('.overlay--content .tab-container');
+
+    showTabContent(parent, index);
+  });
+    
+  $('.tab-menu__item a').click(function (g) { 
+    var tab = $(this).closest('.tab-container'), 
+      index = $(this).parent().index();
+
+    showTabContent(tab, index);
+    
+    g.preventDefault();
+  } );
+
+  // Hide overlay page (sign in and sign out background)
+ function closeOverlay() {
+   $('.overlay').addClass('overlay-animation-removed');
+   $('.overlay').removeClass('overlay-animated');
+  };
+
+
+
+  // ========= FRONT PAGE ========= //
 
   // Adjust Height of Banner in the Front Page
   var $bannerHeight =  $(window).height()-$('.header').height()-$('.icn--learn-more--1').height();
@@ -11,9 +70,89 @@ $(function(){
     $('.banner').css('height', $bannerHeight);
   }
   
+  // Responsive font
   $(".banner--content__item--text h1").fitText(1.2, { minFontSize: '30px', maxFontSize: '80px' });
   
-  // Load the pages
+
+
+  // ========= LIBRARY PAGE ========= //
+
+  // Hide left and right arrow at book shelf's slider
+  $('.sliderarrow').hide(); 
+
+  $('.library__shelf').each(function() { 
+    $books = $( this ).find('.books');  
+
+    // Set length of the shelf
+    $books.css('width', $books.find('.books__item').length*(170));
+
+    // Show the right arrow if shelf width > screen width
+    if ($books.width() > $(this).width()) {
+      $(this).find('.sliderarrow--right').show();
+    };
+
+  });
+
+  $controlRight = $('.sliderarrow--right');
+  $controlLeft  = $('.sliderarrow--left');
+  sliderAnimation();
+
+  $( window ).resize(function() {
+    $bannerHeight =  $(window).height()-$('.header').height()-$('.icn--learn-more--1').height();
+    if ($(window).width() > 768) {
+      $('.banner').css('height', $bannerHeight);
+    }
+
+    // Adjust Width of Library Shelf 
+    $('.library__shelf').each(function() { 
+    
+      $books = $( this ).find('.books');
+      if ($books.width() > $(this).width()) {
+        $(this).find('.sliderarrow--right').show();
+      };
+
+    });
+
+    // Slider animation
+    sliderAnimation();
+    
+
+  });
+
+  // Show side menu (list of categories) in mobile display
+  $('.side-menu-toggle').click(function() {
+    $(this).toggleClass('side-menu-toggle--active');
+  });
+
+
+  // Boooks' animation while hovering
+  var $container  = $('.books'),
+   $articles = $container.children('li'),
+   timeout;
+
+  $articles.on( 'mouseenter', function( event ) {
+   var $article  = $(this);
+   clearTimeout( timeout );
+   timeout = setTimeout( function() {
+     
+     if( $article.hasClass('active') ) return false;
+     
+     $articles.not( $article.removeClass('blur').addClass('active') )
+          .removeClass('active')
+          .addClass('blur');
+     
+   }, 65 );
+  });
+
+  $container.on( 'mouseleave', function( event ) {
+   clearTimeout( timeout );
+   $articles.removeClass('active blur');
+  });
+
+
+
+  // ========= LOAD THE PAGES ========= //
+
   var pageurl = '';
   $("a[rel='tab']").click(function(e){
     //get the link location that was clicked
@@ -24,7 +163,9 @@ $(function(){
       menuAction();
     }
   });
+
 });
+
 
 /* the below code is to override back button to get the ajax content without reload*/
 $(window).bind('popstate', function() {
@@ -35,6 +176,11 @@ $(window).bind('popstate', function() {
 
 
 
+
+// FUNCTIONS //
+///////////////
+
+// Click page link 
 function openPage(pageurl) {
   //to get the ajax content and display in div with id 'container'
   $.ajax({url:pageurl+'?rel=tab',success: function(data){
@@ -48,65 +194,22 @@ function openPage(pageurl) {
   return false;
 }
 
+// Show content of tabs item, e.g., sign-in and sign up form
+function showTabContent($parent, $index) {
+  $parent.find('.tab-menu__item').removeClass('tab-menu__item--current');
+  $parent.find('.tab-menu__item:eq(' + $index + ')').addClass('tab-menu__item--current');
+  $parent.find('.tab-content__item').hide();
+  $parent.find('.tab-content__item:eq(' + $index + ')').show();
+}
 
-
-// Hide left and right arrow at book shelf's slider
-$('.sliderarrow').hide(); 
-
-$('.library__shelf').each(function() { 
-  $books = $( this ).find('.books');  
-
-  // Set length of the shelf
-  $books.css('width', $books.find('.books__item').length*(170));
-
-  // Show the right arrow if shelf width > screen width
-  if ($books.width() > $(this).width()) {
-    $(this).find('.sliderarrow--right').show();
-  };
-
-});
-
-$controlRight = $('.sliderarrow--right');
-$controlLeft  = $('.sliderarrow--left');
-sliderAnimation();
-
-$( window ).resize(function() {
-  $bannerHeight =  $(window).height()-$('.header').height()-$('.icn--learn-more--1').height();
-  if ($(window).width() > 768) {
-    $('.banner').css('height', $bannerHeight);
-  }
-
-  // Adjust Width of Library Shelf 
-  $('.library__shelf').each(function() { 
-  
-    $books = $( this ).find('.books');
-    if ($books.width() > $(this).width()) {
-      $(this).find('.sliderarrow--right').show();
-    };
-
-  });
-
-  // Slider animation
-  sliderAnimation();
-  
-
-});
-
-console.log($('.library__content').parent());
-console.log($('.library__content').width());
-
-
-
-
+// Slider animation on bookshelfs
 function sliderAnimation() {
   $bookWidth = $('.books li').width();
   $shelfWidth = $('.library__shelf').width();
   $nBookDisplayed = Math.floor($shelfWidth/$bookWidth);
   $shelfWindow = $nBookDisplayed * $bookWidth;
 
-  // console.log($shelfWidth);
-  // console.log($shelfWindow);
-
+  // Click right arrow -> Slide to left
   $controlRight.click(function () {
     $curPos = $( this ).next('.books').position().left;
 
@@ -125,6 +228,7 @@ function sliderAnimation() {
     } 
   });
 
+  // Click left arrow -> Slide to right
   $controlLeft.click(function () {
     $curPos = $( this ).siblings('.books').position().left;
     $booksWidth = $(this).next('.books').width();
@@ -140,90 +244,8 @@ function sliderAnimation() {
       $(this).hide(700);
       $(this).siblings('.sliderarrow--right').show(700);
     }
-    
   });
 }
-
-
-
- // D. Animation
- // ============
-
- // Toggle Menu
-$(document).ready(function() {
-  $('.toggle').click(function() {
-   menuAction();
-  });
-
-  // Learn More icon
-  $('.icn--learn-more').click(function() {
-   $this = $(this);
-   $next = $(this).next('.description');
-   $(document.body).scrollTo($next);
-  });
-
-
-  // Show Overlay Page (sign in and sign out background)
-  // Show Sign In and Sign Out Form
-  $('.signIn').click(function() {
-   $.ajax({
-     url: 'inc/sign-in.html'
-   })
-     .done(function( response ) {
-       $( '.overlay--content div' ).html( response );
-     });
-   $('.overlay').addClass('overlay-animated');
-   $('.overlay').removeClass('overlay-animation-removed');
-  });
-
-  $('.signUp').click(function() {
-   $.ajax({
-     url: 'inc/sign-up.html'
-   })
-     .done(function( response ) {
-       $( '.overlay--content div' ).html( response );
-     });
-   $('.overlay').addClass('overlay-animated');
-   $('.overlay').removeClass('overlay-animation-removed');
-  });
-
-  // Hide overlay page (sign in and sign out background)
-  $('.overlay__close').click(function() {
-   $('.overlay').addClass('overlay-animation-removed');
-   $('.overlay').removeClass('overlay-animated');
-  });
-
-});
-
-
-// Boooks animation while hovering
-var $container  = $('.books'),
- $articles = $container.children('li'),
- timeout;
-
-$articles.on( 'mouseenter', function( event ) {
-   
- var $article  = $(this);
- clearTimeout( timeout );
- timeout = setTimeout( function() {
-   
-   if( $article.hasClass('active') ) return false;
-   
-   $articles.not( $article.removeClass('blur').addClass('active') )
-        .removeClass('active')
-        .addClass('blur');
-   
- }, 65 );
- 
-});
-
-$container.on( 'mouseleave', function( event ) {
- 
- clearTimeout( timeout );
- $articles.removeClass('active blur');
- 
-});
-
 
  // Toggle Menu
 function menuAction() {
@@ -233,13 +255,15 @@ function menuAction() {
   $('.hidemenu').toggleClass('hidemenu-show');
 }
 
+
+
 document.addEventListener("touchstart", function(){}, true);
 
 
 // Library
+// Sorting
 $('.category__opt').hide();
 $('.category__opt--added').show();
-
 function sortFunction() {
   // var x = ;
   var i = document.getElementById("sort-option").selectedIndex;
@@ -259,9 +283,20 @@ function sortFunction() {
   }
 }
 
-// $('.side-menu-toggle').siblings('div').hide();
-$('.side-menu-toggle').click(function() {
-  $(this).toggleClass('side-menu-toggle--active');
-  
-  console.log('click');
-});
+function scrollalert(){  
+    var scrolltop=$('#scrollbox').attr('scrollTop');  
+    var scrollheight=$('#scrollbox').attr('scrollHeight');  
+    var windowheight=$('#scrollbox').attr('clientHeight');  
+    var scrolloffset=20;  
+    if(scrolltop>=(scrollheight-(windowheight+scrolloffset)))  
+    {  
+        //fetch new items  
+        $('#status').text('Loading more items...');  
+        $.get('new-items.html', '', function(newitems){  
+            $('#content').append(newitems);  
+            updatestatus();  
+        });  
+    }  
+    setTimeout('scrollalert();', 1500);  
+}
+

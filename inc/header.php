@@ -25,7 +25,7 @@
               <input type="submit" id="search-submit" />
             </form>
           </li>
-          <li class="header-menu__item signIn" id="signIn">
+          <li class="header-menu__item enter signIn">
             <p class="icn">Sign In</p>
           </li>
           <li class="header-menu__item" id="menu">

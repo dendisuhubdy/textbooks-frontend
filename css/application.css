@@ -272,7 +272,7 @@ a {
   text-decoration: none;
   color: #7f8c8d;
   text-shadow: inherit;
-  border-bottom: 4px solid rgba(39, 174, 96, 0.5);
+  border-bottom: 4px solid rgba(179, 238, 204, 0.5);
   font-weight: 400; }
   a:hover, a:active {
     border-bottom: 2px solid rgba(39, 174, 96, 0.5);
@@ -538,7 +538,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     margin-bottom: 2.25em; }
 
 .btn--default, .form__submit {
-  border: 2px solid #27ae60;
+  border: 2px solid #b3eecc;
   color: #27ae60;
   background: transparent;
   overflow: hidden;
@@ -566,7 +566,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--success {
-  border: 2px solid #2ecc71;
+  border: 2px solid #d1f5e0;
   color: #2ecc71;
   background: transparent;
   overflow: hidden;
@@ -594,7 +594,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--warning {
-  border: 2px solid #e67e22;
+  border: 2px solid #fbe9d9;
   color: #e67e22;
   background: transparent;
   overflow: hidden;
@@ -622,7 +622,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--info {
-  border: 2px solid #3498db;
+  border: 2px solid #e1f0fa;
   color: #3498db;
   background: transparent;
   overflow: hidden;
@@ -650,7 +650,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
     width: 101%;
     opacity: 0.35; }
 .btn--blank {
-  border: 2px solid #7f8c8d;
+  border: 2px solid #ebeded;
   color: #7f8c8d;
   background: transparent;
   overflow: hidden;
@@ -763,7 +763,7 @@ input[type="radio"]:checked + label::after {
 
 .form {
   position: relative;
-  padding: 2.5em 1.25em 1.25em; }
+  padding: 1.5em 0.75em 0.75em; }
   .form__input {
     height: 32px;
     background: none;
@@ -1136,18 +1136,55 @@ input[type="radio"]:checked + label::after {
   width: 100%;
   background: white;
   opacity: 0.98; }
-  .overlay__close {
-    font-size: 200%;
-    text-align: right;
-    margin-right: 25%;
-    margin-top: 3.1875em;
-    margin-bottom: 0;
+  .overlay .tab-container {
+    padding-top: 80px;
     position: relative;
-    z-index: 600; }
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Raleway", sans-serif;
+    line-height: 1.5;
+    color: #7f8c8d;
+    -webkit-font-smoothing: antialiased; }
+    .overlay .tab-container .tab-menu {
+      display: table;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      width: 100%; }
+      .overlay .tab-container .tab-menu__item {
+        float: left;
+        line-height: 38px;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        margin: 0.1875em; }
+        .overlay .tab-container .tab-menu__item a {
+          background-color: #ecf0f1;
+          color: #7f8c8d;
+          font-weight: 500;
+          display: block;
+          letter-spacing: 0;
+          outline: none;
+          padding: 0 20px;
+          text-decoration: none;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+          border-bottom: initial;
+          border: 2px solid transparent; }
+          .overlay .tab-container .tab-menu__item a:hover {
+            border-color: #bdc3c7; }
+        .overlay .tab-container .tab-menu__item--current a {
+          color: #fff;
+          background: #27ae60;
+          font-weight: 500; }
+          .overlay .tab-container .tab-menu__item--current a:hover {
+            border-color: #209150; }
+    .overlay .tab-container .tab-contain__item {
+      padding: 30px 0; }
   .overlay .form {
-    background: #ecf0f1;
     opacity: 1;
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     -moz-transform: translateX(-300%);
     -o-transform: translateX(-300%);
     -ms-transform: translateX(-300%);

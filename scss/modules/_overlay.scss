@@ -7,26 +7,96 @@
   width: 100%;
   background: palette(grey, xx-light);
   opacity: 0.98;
+  // -top: em(250px);
 
-  @include e(close) {
-    font-size: 200%;
-    text-align: right;
-    margin-right: 25%;
-    margin-top: em(51px);
-    margin-bottom: 0;
+  // @include e(close) {
+  //   font-size: 200%;
+  //   text-align: right;
+  //   margin-right: 25%;
+  //   margin-top: em(51px);
+  //   margin-bottom: 0;
+  //   position: relative;
+  //   z-index: 600;
+  // }
+
+  .tab-container {
+    padding-top: 80px;
     position: relative;
-    z-index: 600;
+    overflow: hidden;
+    // background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    font-family: $font-family--secondary;
+    line-height: 1.5;
+    color: palette(grey, dark);
+    -webkit-font-smoothing: antialiased;
+
+    .tab-menu {
+      display: table;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      width: 100%;
+      
+      @include e(item) {
+        float: left;
+        line-height: 38px;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        margin: em(3px);
+
+        a {
+          background-color: palette(grey, x-light);
+          // border-bottom: 1px solid $white;
+          color: palette(grey, dark);
+          font-weight: 500;
+          display: block;
+          letter-spacing: 0;
+          outline: none;
+          padding: 0 20px;
+          text-decoration: none;
+          -webkit-transition: all 0.2s ease-in-out;
+             -moz-transition: all 0.2s ease-in-out;
+                  transition: all 0.2s ease-in-out;
+          border-bottom: initial;
+          border: 2px solid transparent;
+
+          &:hover {
+            border-color: palette(grey, light);
+          }
+          
+        }
+
+        @include m(current) {
+          a {
+            color: $white;
+            background: $color-primary;
+            font-weight: 500;
+
+            &:hover {
+              border-color: darken($color-primary, 7%);
+            }
+          }  
+        }
+      }  
+    }
+
+    .tab-contain {
+      @include e(item) {
+        // display: none;
+        padding: 30px 0;
+      }
+    }
+
   }
 
+  
+
   .form {
-    background: palette(grey, x-light);
     opacity: 1;
-    box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
     @include transform(translateX(-300%));
     margin-bottom: em(20px);
-
-    
-
   }
 
   &-animated {

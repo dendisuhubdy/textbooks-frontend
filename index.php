@@ -17,7 +17,7 @@
         <h2>
           For just $2.99/mo for students (specific majors) or $8.99 for unlimited textbooks.
         </h2>
-        <button class="btn--default signUp" id="signUp">Sign Up</button>
+        <button class="btn--default enter signUp">Sign Up</button>
       </div>
     </div>
     <div class="grid__col--11 banner--content__item--image is-collapsed-mobile">

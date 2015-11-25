@@ -16,7 +16,7 @@ if($_GET['rel']!='tab'){
       <div>
         <a href="library.php" class="is-hidden-mobile"><h4>Category</h4></a>
         <ul class="category-menu">
-          <li class="category-menu__item"><a href="#">My Bookshelf</a></li>
+          <li class="category-menu__item"><a href="profile.php">My Bookshelf</a></li>
           <li class="category-menu__item"><a href="library.php?category=biology"    >Biology     </a></li>
           <li class="category-menu__item"><a href="library.php?category=chemistry"  >Chemistry   </a></li>
           <li class="category-menu__item"><a href="library.php?category=geography"  >Geography   </a></li>
@@ -158,18 +158,22 @@ if (isset($_GET["category"])) {
           $nBookProgramming = 0;
           $nBookWriting     = 0;
 
-          $nMax = 15;  // Maximum number of books in each shelf
+          $nMax = 18;  // Maximum number of books in each shelf
           $flag = false;
+
+          // $res = array($bookProgramming, $flag, $nBookProgramming);
+
 
           // Function to list the books
           function listBooks($n, $nMax, $books, $newBook, $flag) {              
             if ($n < $nMax) {
               $books = $books . $newBook;
+              $n = $n + 1;
               $flag = false;  
             } else {
               $flag = true;
             }
-            return array($books, $flag);
+            return array($books, $n, $flag);
           }
 
           foreach($books as $book_id => $book) { 
@@ -181,53 +185,65 @@ if (isset($_GET["category"])) {
             //   $flag = true;
             // }
             
+            if ($book["category"] == "programming") {
+              $res = listBooks($nBookProgramming, $nMax, $bookProgramming, get_list_view_html($book_id,$book), $flag);
+              // $res = listBooks($res[2], $nMax, $res[0], get_list_view_html($book_id,$book), $res[1]);
+              $bookProgramming = $res[0];
+              $nBookProgramming = $res[1];
+              $flag = $res[2];
 
+
+            }
+            if ($book["category"] == "writing") {
+              $res = listBooks($nBookWriting, $nMax, $bookWriting, get_list_view_html($book_id,$book), $flag);
+              $bookWriting = $res[0];
+              $nBookWriting = $res[1];
+              $flag = $res[2];
+            }
             if ($book["category"] == "mathematics") {
               $res = listBooks($nBookMathematics, $nMax, $bookMathematics, get_list_view_html($book_id,$book), $flag);
               $bookMathematics = $res[0];
-              $flag = $res[1]; 
+              $nBookMathematics = $res[1];
+              $flag = $res[2]; 
             }
             if ($book["category"] == "biology") {
               $res = listBooks($nBookBiology, $nMax, $bookBiology, get_list_view_html($book_id,$book), $flag);
               $bookBiology = $res[0];
-              $flag = $res[1];
+              $nBookBiology = $res[1];
+              $flag = $res[2];
             }
 
             if ($book["category"] == "chemistry") {
               $res = listBooks($nBookChemistry, $nMax, $bookChemistry, get_list_view_html($book_id,$book), $flag);
               $bookChemistry = $res[0];
-              $flag = $res[1];
+              $nBookChemistry = $res[1];
+              $flag = $res[2];
             }
 
             if ($book["category"] == "physics") {
               $res = listBooks($nBookPhysics, $nMax, $bookPhysics, get_list_view_html($book_id,$book), $flag);
               $bookPhysics = $res[0];
-              $flag = $res[1];
+              $nBookPhysics = $res[1];
+              $flag = $res[2];
             }
 
             if ($book["category"] == "geography") {
               $res = listBooks($nBookGeography, $nMax, $bookGeography, get_list_view_html($book_id,$book), $flag);
               $bookGeography = $res[0];
-              $flag = $res[1];
+              $nBookGeography = $res[1];
+              $flag = $res[2];
             }
 
             if ($book["category"] == "history") {
               $res = listBooks($nBookHistory, $nMax, $bookHistory, get_list_view_html($book_id,$book), $flag);
               $bookHistory = $res[0];
-              $flag = $res[1];
+              $nBookHistory = $res[1];
+              $flag = $res[2];
             }
 
-            if ($book["category"] == "programming") {
-              $res = listBooks($nBookProgramming, $nMax, $bookProgramming, get_list_view_html($book_id,$book), $flag);
-              $bookProgramming = $res[0];
-              $flag = $res[1];
-            }
+            
 
-            if ($book["category"] == "writing") {
-              $res = listBooks($nBookWriting, $nMax, $bookWriting, get_list_view_html($book_id,$book), $flag);
-              $bookWriting = $res[0];
-              $flag = $res[1];
-            }
+            
 
             if ($flag == true) {
               break; // Stop the loop if all shelf have nMax #of books

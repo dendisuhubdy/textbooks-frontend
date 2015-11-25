@@ -85,7 +85,7 @@ input[type="radio"]:checked + label::after {
 
 .form {
   position: relative;
-  padding: em(40px) em(20px) em(20px);
+  padding: em(24px) em(12px) em(12px);
 
   @include e(input) {
     height: 32px;

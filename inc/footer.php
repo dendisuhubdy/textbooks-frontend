@@ -51,8 +51,23 @@
 
     <div class="overlay">
       <div class="overlay--content grid">
-        <p class="icn overlay__close"><span>&#x2715;</span> Close</p>
         <div class="centered grid__col--12">
+          <div class="tab-container">
+
+            <ul class="tab-menu">
+              <li class="tab-menu__item"><a href="#">Sign Up</a></li>
+              <li class="tab-menu__item"><a href="#">Sign In</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-content__item" id="sign-up-container">
+              </div> 
+
+              <div class="tab-content__item" id="sign-in-container">
+              </div> 
+              
+            </div> 
+          </div> 
         </div>  <!-- end .grid__col--12 -->
       </div> <!-- end .overlay--content -->
     </div> <!-- end .overlay -->
