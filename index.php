@@ -15,7 +15,7 @@
           What are you waiting for?
         </h1>
         <h2>
-          For just $2.99/mo for students (specific majors) or $8.99 for unlimited textbooks.
+          For just $8.99/semester to rent six e-textbooks.
         </h2>
         <button class="btn--default enter signUp">Sign Up</button>
       </div>
@@ -28,11 +28,23 @@
 
 <!-- <p class="icn icn--learn-more icn--learn-more--1">Learn More<br><span>&#x002C7;</span></p> -->
 
+<div class="description">
+  <div class="grid description--content">
+    <h1>Unrivaled Learning Experiences</h1>
+    <div class="grid__col--12">
+      <h2>Textbooks.io is an online-based subscription service in which students as the users can access a wide array of textbook collection with a reasonably low monthly fee. SIX from 2,546,785 collection of e-textbooks can be rented in each semester.</h2>
+    </div>
+    <div class="grid__col--12">
+      
+    </div>
+  </div>
+</div> <!-- end .description -->
 
 <div class="description">
   <div class="grid description--content" id="front-browselibrary">
     
     <h1>Choose what you want to read</h1>
+    <h2></h2>
     <div class="centered grid__col--18 categories-icn">
       <div>
         <a href="library.php?category=mathematics"><div class="icn__mathematics"></div>
@@ -74,7 +86,7 @@
   </div>
 </div> <!-- end .description -->
 
-<div class="description">
+<!-- <div class="description">
   <div class="grid description--content">
     <div class="grid__col--18">
       <div class="grid__col--14">
@@ -86,7 +98,7 @@
     </div>
     
   </div>
-</div> <!-- end .description -->
+</div> <!-- end .description --> -->
 
 
 
